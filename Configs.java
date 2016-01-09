@@ -21,9 +21,6 @@ public class Configs {
     public static final String GRAPH_DISPLAY =  "/persaccounting/Graphic/GraphDisplay.fxml";
     public static final String ACCOUNTING =     "/persaccounting/StockAccountung/MainAccounting.fxml";
     /*------------------------END navigation on scenes-----------------------*/    
-    
-    static String calculator_controller_path = 
-            "/persaccounting/Calculator/CalculatorFXML.fxml";  // TODO: get rid of
 
     /*--------------------------------styling--------------------------------*/ 
     // TODO: parametrize styling
@@ -40,7 +37,6 @@ public class Configs {
             "/persaccounting/StaticFiles/calc_style_1.css";
     public static String calculator_style_2 = 
             "/persaccounting/StaticFiles/calc_style_2.css";   
-    /*----------------------------END styling--------------------------------*/     
-    
+    /*----------------------------END styling--------------------------------*/  
     
 }
