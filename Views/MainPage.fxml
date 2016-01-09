@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?scenebuilder-classpath-element ../images?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="persaccounting.Views.MainPageController">
+  <children>
+    <AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="500.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
+      <children>
+        <!--http://www.javacodegeeks.com/2013/03/javafx-2-with-spring.html-->
+        <!--<fx:include source="/trial/fichiersFxml/RootLayout.fxml"/> -->
+        <Accordion minWidth="175.0" prefHeight="450.0" prefWidth="443.0" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="75.98">
+          <panes>
+            <TitledPane id="" alignment="TOP_LEFT" animated="false" prefWidth="312.0" style="-fx-font: NORMAL 18 Tahoma;" text="Functionality" fx:id="x2">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-font: NORMAL 15 Tahoma;">
+                  <children>
+                    <Label fx:id="functionaliteLabel" alignment="TOP_LEFT" focusTraversable="true" prefHeight="250.0" prefWidth="65.0" text="Description" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane alignment="TOP_LEFT" animated="false" style="-fx-font: NORMAL 18 Tahoma;" text="Utility">
+              <content>
+                <AnchorPane id="Content" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-font: NORMAL 15 Tahoma;">
+                  <children>
+                    <Label fx:id="utiliteLabel" alignment="TOP_LEFT" focusTraversable="true" prefHeight="250.0" prefWidth="650.0" text="Description" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+            <TitledPane id="x2" animated="false" style="-fx-font: NORMAL 18 Tahoma;" text="Effectiveness" fx:id="x1">
+              <content>
+                <AnchorPane id="Content" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="200.0" style="-fx-font: NORMAL 15 Tahoma;">
+                  <children>
+                    <Label fx:id="efficaciteLabel" alignment="TOP_LEFT" cache="true" cacheHint="DEFAULT" contentDisplay="CENTER" depthTest="INHERIT" disable="false" ellipsisString="" focusTraversable="true" graphicTextGap="4.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-1.0" minWidth="-1.0" mnemonicParsing="false" mouseTransparent="false" pickOnBounds="false" prefHeight="250.0" prefWidth="650.0" text="Description" textOverrun="ELLIPSIS" underline="false" wrapText="true" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
+                  </children>
+                </AnchorPane>
+              </content>
+            </TitledPane>
+          </panes>
+        </Accordion>
+        <Label alignment="CENTER" prefHeight="46.0" prefWidth="948.0" style="-fx-font: NORMAL 25 Tahoma;" text="Welcome to PersAccounting!" textAlignment="CENTER" underline="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+          <font>
+            <Font name="System Bold" size="20.0" />
+          </font>
+        </Label>
+        <ImageView fitHeight="210.81011962890625" fitWidth="171.69072357824646" layoutX="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.topAnchor="175.98">
+          <image>
+            <Image url="@../images/main.png" />
+          </image>
+        </ImageView>
+        <Label alignment="CENTER" contentDisplay="CENTER" layoutY="426.0" prefWidth="948.0" text="H a v e   a   n i c e   d a y !&#10;*  *  *" textAlignment="CENTER" textFill="#667eff" underline="false" wrapText="false" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+          <font>
+            <Font name="System Bold Italic" size="20.0" />
+          </font>
+        </Label>
+      </children>
+      <padding>
+        <Insets />
+      </padding>
+    </AnchorPane>
+  </children>
+  <padding>
+    <Insets bottom="50.0" top="70.0" />
+  </padding>    
+</AnchorPane>

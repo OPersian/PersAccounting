@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="598.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Controllers.RootLayoutController">
+  <children>
+    <StackPane fx:id="viewHolder" layoutY="47.0" minHeight="-Infinity" prefHeight="548.0" prefWidth="590.0" snapToPixel="true" AnchorPane.bottomAnchor="55.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="47.0">
+      <padding>
+        <Insets />
+      </padding>
+    </StackPane>
+    <MenuBar focusTraversable="false" prefHeight="27.0" prefWidth="781.0" useSystemMenuBar="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+      <effect>
+        <ColorAdjust brightness="0.01526717557251911" contrast="3.0534351145017347E-4" hue="-0.03053435114503822" saturation="0.007633587786259444" />
+      </effect>
+      <menus>
+        <Menu disable="false" mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showMainPage" text="Main Page" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+          </items>
+        </Menu>
+            <Menu disable="false" mnemonicParsing="false" text="Calculator">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#launchCalculator" text="Launch Calculator" />
+               </items>
+            </Menu>
+            <Menu disable="false" mnemonicParsing="false" text="Graphic">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showGraphSettings" text="Settings" />
+                  <MenuItem mnemonicParsing="false" onAction="#launchGraph" text="Launch Graphic" />
+               </items>
+            </Menu>
+       
+       
+        
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" onAction="#showAbout" text="Info..." />
+            <MenuItem mnemonicParsing="false" onAction="#showAuthor" text="Author" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+
+    <VBox id="VBox" alignment="CENTER" spacing="5.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+      <children>
+        <Separator minHeight="2.0" prefHeight="2.9998779296875" prefWidth="722.0" />
+        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="738.0" text="Created by Olena Persianova&#10;2016, Kharkiv, UKRAINE" textAlignment="CENTER" textFill="#210066" underline="false">
+          <font>
+            <Font size="10.0" />
+          </font>
+        </Label>
+      </children>
+    </VBox>
+  </children>    
+</AnchorPane>
