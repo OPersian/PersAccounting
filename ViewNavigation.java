@@ -33,39 +33,11 @@ public class ViewNavigation {
                     )
                 )         
             );
-            Main.currentSubView = fxml;
-            System.out.println(Main.currentSubView); // debug
+            Globals.currentSubView = fxml;
+            System.out.println(Globals.currentSubView); // debug
         }
         catch (IOException e) {
             e.printStackTrace();
         }
-        /*
-        // peupler la liste des articles quand on charge l'application
-        if (MainMotsApp.mabaseArticle_stockage == null) {
-        MainMotsApp.mabaseArticle_stockage = MainMotsApp.mabaseArticle_onload;
-        }
-        // peupler la liste des photos quand on charge l'application
-        if (MainMotsApp.mabasePhoto_stockage == null) {
-        MainMotsApp.mabasePhoto_stockage = MainMotsApp.mabasePhoto_onload;
-        }
-        */
     }    
-
-    /*---------regles de relations entre vues-types de matieres---------------*/
-    /*
-    public static Boolean nonMatiereVueCheck(){
-        return (MainMotsApp.couranteSousVue != VueNavigateur.PAGE_ACCUEIL && 
-                MainMotsApp.couranteSousVue != VueNavigateur.RESULTATS_RECHERCHE &&
-                MainMotsApp.couranteSousVue != VueNavigateur.AUTEURS_INFO);
-    }
-    public static Boolean articleVueCheck(){
-        return (MainMotsApp.couranteSousVue == VueNavigateur.ARTICLE_AJOUTE || 
-                MainMotsApp.couranteSousVue == VueNavigateur.ARTICLE_TABLEAU);
-    }
-    public static Boolean photoVueCheck(){
-        return (MainMotsApp.couranteSousVue == VueNavigateur.PHOTO_AJOUTE || 
-                MainMotsApp.couranteSousVue == VueNavigateur.PHOTO_TABLEAU);
-    }
-    */
-    /*------------------------------END regles--------------------------------*/    
 }

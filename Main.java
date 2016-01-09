@@ -9,7 +9,6 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -20,10 +19,8 @@ import persaccounting.Controllers.RootLayoutController;
  *
  * @author User
  */
-public class Main extends Application {
-    
-    public static String currentSubView;
-    
+public class Main extends Application {    
+   
     // load main scene:
     private Pane loadMainPane() throws IOException  {
         FXMLLoader loader = new FXMLLoader();  
@@ -56,21 +53,6 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         
         try {
-            /*
-            Parent root = FXMLLoader.load(getClass().
-                    getResource(Configs.calculator_controller_path));
-
-            Scene scene = new Scene(root);
-            */
-            
-            /*
-            AnchorPane root = (AnchorPane)FXMLLoader.load(getClass().
-                    getResource(Configs.calculator_controller_path));
-            
-            Scene scene = new Scene(root);  // ,300,250	
-            */
-            
-            // stage.setScene(scene);
             stage.setScene(
                 createScene(
                     loadMainPane()

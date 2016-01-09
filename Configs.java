@@ -24,7 +24,7 @@ public class Configs {
     /*------------------------END navigation on scenes-----------------------*/    
     
     static String calculator_controller_path = 
-            "/persaccounting/Calculator/CalculatorFXML.fxml";
+            "/persaccounting/Calculator/CalculatorFXML.fxml";  // TODO: get rid of
     
     public static String calculator_default_style = 
             "/persaccounting/StaticFiles/default_style.css";

@@ -46,24 +46,11 @@ public class RootLayoutController  {
         ViewNavigation.loadView(Configs.GRAPH_DISPLAY);
     }
     
-    /*
-    @FXML
-    private void allerArticleAjoute(ActionEvent event) {
-        ViewNavigation.loadView(Configs.ARTICLE_AJOUTE);
-    }
-
-    @FXML
-    private void allerPhotoAjoute(ActionEvent event) {
-        ViewNavigation.loadView(Configs.PHOTO_AJOUTE);
-    }
-    */
-    
     @FXML
     private void showAbout() {
         AlertManagement.displayInfoAlert();
     }
 
-    // sortir de l'application
     @FXML
     private void exit() {
         System.exit(0);
@@ -73,17 +60,4 @@ public class RootLayoutController  {
     private void showAuthor(ActionEvent event) {
         ViewNavigation.loadView(Configs.AUTHOR_INFO);
     }
-    
-    /*
-    @FXML
-    private void allerListeArticles(ActionEvent event) {
-        ViewNavigation.loadView(Configs.ARTICLE_TABLEAU);
-    }
-
-    @FXML
-    private void allerListePhotos(ActionEvent event) {
-        ViewNavigation.loadView(Configs.PHOTO_TABLEAU);
-    }    
-    */
-
 }
