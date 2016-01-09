@@ -43,7 +43,7 @@ public class GraphDisplayController implements Initializable {
         series.setName("Graph of y=k/x function");
         // populating the series with data:
         for (double i = start; i <= stop; i += delta) {	
-            System.out.println(i + "; " + coefficient/i);
+            // System.out.println(i + "; " + coefficient/i);  // debug
             series.getData().add(new XYChart.Data(i, coefficient/i));
         }
         return series;

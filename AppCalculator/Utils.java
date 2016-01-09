@@ -12,7 +12,7 @@ import java.math.MathContext;
  *
  * @author Olena
  */
-public class Utility {
+public class Utils {
     
     public static BigDecimal calculate(String operator, BigDecimal left, BigDecimal right) {
         switch (operator) {

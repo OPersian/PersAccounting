@@ -11,7 +11,7 @@
 <?import javafx.scene.text.*?>
 <?scenebuilder-classpath-element ../images?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="persaccounting.Views.MainPageController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Views.MainPageController">
   <children>
     <AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="500.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
       <children>

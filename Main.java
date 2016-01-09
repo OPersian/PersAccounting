@@ -6,6 +6,7 @@
 package persaccounting;
 
 import java.io.IOException;
+import java.util.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,8 +20,29 @@ import persaccounting.Controllers.RootLayoutController;
  *
  * @author User
  */
-public class Main extends Application {    
-   
+public class Main extends Application { 
+
+    // create scene with styling:
+    private Scene createScene(Pane mainPane) {
+        Scene scene = new Scene(
+            mainPane
+        );
+        
+        // get default style from configs mapper:
+        Mapper mapper = new Mapper();
+        System.out.println(mapper.scene_style_mapper); // debug
+        Map<String, String> current_scene_style_mapper = mapper.scene_style_mapper.get(Globals.currentSubView);
+        System.out.println(current_scene_style_mapper); // debug
+        String current_default_style = current_scene_style_mapper.get(Mapper.default_style);
+        // String current_default_style = (String) current_default_style_obj;
+        
+        // styling:
+        scene.getStylesheets().add(current_default_style); // default style
+        Globals.mainScene = scene.getStylesheets();
+            
+        return scene;
+    }
+
     // load main scene:
     private Pane loadMainPane() throws IOException  {
         FXMLLoader loader = new FXMLLoader();  
@@ -36,19 +58,7 @@ public class Main extends Application {
         ViewNavigation.loadView(Configs.MAIN_PAGE);        
         return mainPane;
     }
-    
-    // create with styling
-    private Scene createScene(Pane mainPane) {
-        Scene scene = new Scene(
-            mainPane
-        );
-        // styling:
-        scene.getStylesheets().add(Configs.calculator_style_2); // default style
-        Globals.mainScene = scene.getStylesheets();
-            
-        return scene;
-    }
-    
+       
     @Override
     public void start(Stage stage) throws Exception {
         

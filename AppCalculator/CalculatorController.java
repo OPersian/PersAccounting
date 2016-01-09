@@ -126,7 +126,7 @@ public class CalculatorController {
                 // System.out.println(numberInputting);  // debug
                 final BigDecimal right = numberInputting ? new BigDecimal(current_str_number) : left;
                 // System.out.println(selectedOperator);  // debug
-                left = Utility.calculate(selectedOperator, left, right);
+                left = Utils.calculate(selectedOperator, left, right);
                 current_str_number = left.toString(); // result
                 display.setText(current_str_number);
                 numberInputting = false;
@@ -141,7 +141,7 @@ public class CalculatorController {
                 left = new BigDecimal(current_str_number);
                 // System.out.print("-----left----" + left);
                 
-                if (Utility.isInRange(left) == true) {
+                if (Utils.isInRange(left) == true) {
                     double rad_result = Math.toRadians(left.doubleValue()); // TODO: test
                     current_str_number = Double.toString(rad_result); // result
                     display.setText(current_str_number);

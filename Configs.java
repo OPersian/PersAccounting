@@ -10,8 +10,7 @@ package persaccounting;
  * @author Olena
  */
 
-public class Configs {    
-    
+public class Configs {
     /*--------------------------navigation on scenes-------------------------*/ 
     public static final String ROOT_LAYOUT =    "/persaccounting/Views/RootLayout.fxml"; 
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
@@ -23,7 +22,6 @@ public class Configs {
     /*------------------------END navigation on scenes-----------------------*/    
 
     /*--------------------------------styling--------------------------------*/ 
-    // TODO: parametrize styling
     public static String graph_default_style = 
             "/persaccounting/StaticFiles/graph_default_style.css";
     public static String graph_style_1 = 
