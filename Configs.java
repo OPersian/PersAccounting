@@ -16,7 +16,6 @@ public class Configs {
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
     public static final String AUTHOR_INFO =    "/persaccounting/Views/AuthorInfo.fxml"; 
     public static final String CALCULATOR =     "/persaccounting/Calculator/CalculatorFXML.fxml"; 
-    public static final String GRAPH_SETTINGS = "/persaccounting/Graphic/GraphSettings.fxml";
     public static final String GRAPH_DISPLAY =  "/persaccounting/Graphic/GraphDisplay.fxml";
     public static final String ACCOUNTING =     "/persaccounting/StockAccountung/MainAccounting.fxml";
     /*------------------------END navigation on scenes-----------------------*/    

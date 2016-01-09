@@ -37,11 +37,6 @@ public class RootLayoutController  {
     }
 
     @FXML
-    private void showGraphSettings(ActionEvent event) {
-        ViewNavigation.loadView(Configs.GRAPH_SETTINGS);
-    }
-
-    @FXML
     private void launchGraph(ActionEvent event) {
         ViewNavigation.loadView(Configs.GRAPH_DISPLAY);
     }

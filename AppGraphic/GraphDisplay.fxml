@@ -10,15 +10,22 @@
 <?import javafx.scene.chart.LineChart?>
 <?import javafx.scene.chart.NumberAxis?>
 
-<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppGraphic.GraphDisplayController">
-   <center>
-      <LineChart fx:id="chart" alternativeRowFillVisible="false" styleClass="background" title="y=k/x" BorderPane.alignment="CENTER">
-        <xAxis>
-          <NumberAxis label="x" minorTickCount="10" side="BOTTOM" upperBound="360.0" />
-        </xAxis>
-        <yAxis>
-          <NumberAxis label="y" side="LEFT" />
-        </yAxis>
-      </LineChart>
-   </center>
-</BorderPane>
+
+<AnchorPane prefHeight="452.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppGraphic.GraphDisplayController">
+   <children>
+      <BorderPane layoutX="19.0" layoutY="75.0">
+         <center>
+            <LineChart fx:id="chart" alternativeRowFillVisible="false" prefHeight="280.0" prefWidth="357.0" styleClass="background" title="y=k/x" BorderPane.alignment="CENTER">
+              <xAxis>
+                <NumberAxis label="x" minorTickCount="10" side="BOTTOM" upperBound="360.0" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis label="y" side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </center>
+      </BorderPane>
+      <Button fx:id="style_2" layoutX="288.0" layoutY="36.0" mnemonicParsing="false" text="Style 2" />
+      <Button fx:id="style_1" layoutX="191.0" layoutY="36.0" mnemonicParsing="false" text="Style 1" />
+   </children>
+</AnchorPane>

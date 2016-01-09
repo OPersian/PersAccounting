@@ -49,8 +49,8 @@ public class Mapper {
         calc_style_scene_mapper.put(second_style, Configs.calculator_style_2);
         
         graph_style_scene_mapper.put(default_style, Configs.graph_default_style);
-        graph_style_scene_mapper.put(first_style, Configs.calculator_style_1);
-        graph_style_scene_mapper.put(second_style, Configs.calculator_style_2); 
+        graph_style_scene_mapper.put(first_style, Configs.graph_style_1);
+        graph_style_scene_mapper.put(second_style, Configs.graph_style_2); 
         
         // System.out.println(calc_style_scene_mapper);   // debug
         // System.out.println(graph_style_scene_mapper);  // debug
@@ -62,7 +62,6 @@ public class Mapper {
         // TODO: reimplement (with appropriate stylings)
         scene_style_mapper.put(Configs.MAIN_PAGE, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.AUTHOR_INFO, calc_style_scene_mapper);
-        scene_style_mapper.put(Configs.GRAPH_SETTINGS, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.ACCOUNTING, calc_style_scene_mapper);
         
         // System.out.println(scene_style_mapper);       // debug

@@ -34,7 +34,6 @@
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Graphic">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#showGraphSettings" text="Settings" />
                   <MenuItem mnemonicParsing="false" onAction="#launchGraph" text="Launch Graphic" />
                </items>
             </Menu>
