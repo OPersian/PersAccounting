@@ -1,11 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Graphic.GraphDisplayController">
-    
+<!--
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="persaccounting.Graphic.GraphDisplayController">    
 </AnchorPane>
+-->
+
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Graphic.GraphDisplayController">
+   <center>
+      <LineChart fx:id="chart" alternativeRowFillVisible="false" title="y=k/x" BorderPane.alignment="CENTER">
+        <xAxis>
+          <NumberAxis label="x" minorTickCount="10" side="BOTTOM" upperBound="360.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="y" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+</BorderPane>
