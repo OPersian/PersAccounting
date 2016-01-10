@@ -101,22 +101,24 @@ public class EditViewController implements Initializable {
     private boolean isInputValid() {
         String errorMessage = "";
         if (commodityNameField.getText() == null || commodityNameField.getText().length() == 0) {
-            errorMessage += "No valid first name!\n"; // TODO: change text
+            errorMessage += "\nNo valid commodity name!";
         }
         if (commodityDescriptionField.getText() == null || commodityDescriptionField.getText().length() == 0) {
-            errorMessage += "No valid last name!\n"; // TODO: change text
+            errorMessage += "\nNo valid commodity description!"; // TODO: refactor; can be NULL!
         }
         if (commodityQuantityInStockField.getText() == null || commodityQuantityInStockField.getText().length() == 0) {
-            errorMessage += "No valid mark 1!\n"; // TODO: change text
+            errorMessage += "\nNo valid quantity in stock!"; // TODO: refactor; can be NULL!
         }
         if (commodityPriceWithoutTaxField.getText() == null || commodityPriceWithoutTaxField.getText().length() == 0) {
-            errorMessage += "No valid mark 2!\n"; // TODO: change text
+            errorMessage += "\nNo valid price!"; // TODO: refactor; can be NULL!
         }
         if (errorMessage.length() == 0) {
             return true;
         } else {
             // Show the error message.
-            AlertManagement.displayErrorAlert("Invalid fields", "Please correct invalid fields!");
+            AlertManagement.displayErrorAlert(
+                "Invalid fields", 
+                "Please correct invalid fields! Error itself: " + errorMessage);
             return false;
         }
     }    
