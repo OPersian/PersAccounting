@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.*;
 import persaccounting.AppStockAccounting.Entity.Commodity;
 import persaccounting.AppStockAccounting.Utils.DbUtil;
 
@@ -130,22 +131,22 @@ public class CommodityDAO {
     }
 
     public Commodity getCommodityById(int commodityId) {
-        Commodity st = new Commodity();
+        Commodity c = new Commodity();
         try {
             PreparedStatement preparedStatement = con.prepareStatement(SQL_SELECT_BY_ID);
             preparedStatement.setInt(1, commodityId);
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
-                st.setId(rs.getInt("id"));
-                st.setCommodityName(rs.getString("commodityName"));
-                st.setCommodityDescription(rs.getString("commodityDescription"));				
-                st.setCommodityQuantityInStock(rs.getInt("commodityQuantityInStock"));
-                st.setCommodityPriceWithoutTax(rs.getInt("commodityPriceWithoutTax"));
+                c.setId(rs.getInt("id"));
+                c.setCommodityName(rs.getString("commodityName"));
+                c.setCommodityDescription(rs.getString("commodityDescription"));				
+                c.setCommodityQuantityInStock(rs.getInt("commodityQuantityInStock"));
+                c.setCommodityPriceWithoutTax(rs.getInt("commodityPriceWithoutTax"));
                 preparedStatement.close();
             }
         } catch (Exception e) {
             // TODO: implement; OPersian's note
         }
-        return st;
+        return c;
     }
 }

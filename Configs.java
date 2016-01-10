@@ -17,7 +17,8 @@ public class Configs {
     public static final String AUTHOR_INFO =    "/persaccounting/Views/AuthorInfo.fxml"; 
     public static final String CALCULATOR =     "/persaccounting/AppCalculator/CalculatorFXML.fxml"; 
     public static final String GRAPH_DISPLAY =  "/persaccounting/AppGraphic/GraphDisplay.fxml";
-    public static final String ACCOUNTING =     "/persaccounting/AppStockAccountung/MainAccounting.fxml";
+    public static final String ACC_EDIT_VIEW =  "/persaccounting/AppStockAccounting/Views/EditView.fxml";
+    public static final String ACC_MAIN =       "/persaccounting/AppStockAccounting/Views/MainView.fxml";
     /*------------------------END navigation on scenes-----------------------*/    
 
     /*--------------------------------styling--------------------------------*/     
@@ -35,7 +36,10 @@ public class Configs {
     public static String calculator_style_1 = 
             "/persaccounting/StaticFiles/CSS/calc_style_1.css";
     public static String calculator_style_2 = 
-            "/persaccounting/StaticFiles/CSS/calc_style_2.css";   
+            "/persaccounting/StaticFiles/CSS/calc_style_2.css"; 
+    
+    // acc styling
+    // TODO    
     /*----------------------------END styling--------------------------------*/  
     
 }

@@ -15,8 +15,6 @@ import javafx.fxml.FXMLLoader;
  */
 public class ViewNavigation {
     
-
-    
     private static RootLayoutController mainController;
     
     public static void setMainController(RootLayoutController mainController){

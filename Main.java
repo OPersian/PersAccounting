@@ -18,10 +18,21 @@ import persaccounting.Views.RootLayoutController;
 
 /**
  *
- * @author User
+ * @author Olena
  */
 public class Main extends Application { 
 
+    private Stage stage;
+
+    /**
+     * Returns the main stage. 
+     * Needed for Accounting app (EditView modal dialog).
+     * @return
+     */
+    public Stage getPrimaryStage() {
+        return stage;
+    }
+    
     // create scene with styling:
     private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
@@ -60,10 +71,11 @@ public class Main extends Application {
         ViewNavigation.loadView(Configs.MAIN_PAGE);        
         return mainPane;
     }
-       
-    @Override
-    public void start(Stage stage) throws Exception {
-        
+
+    /**
+     * Initializes the root layout.
+     */
+    public void initMainWindow(){
         try {
             stage.setScene(
                 createScene(
@@ -76,13 +88,18 @@ public class Main extends Application {
             // styling:
             stage.initStyle(StageStyle.UTILITY);          
                         
-            stage.show();
-            
-        } catch(Exception e) {
+            stage.show();            
+        } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-
+        }    
+    }    
+    
+    @Override
+    public void start(Stage stage) throws Exception {
+        this.stage = stage;       
+        initMainWindow();
+    }  
+    
     /**
      * @param args the command line arguments
      */

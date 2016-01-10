@@ -43,16 +43,21 @@ public class RootLayoutController  {
     
     @FXML
     private void showAbout() {
-        AlertManagement.displayInfoAlert();
+        AlertManagement.displayAuthorAlert();
     }
 
     @FXML
     private void exit() {
-        System.exit(0);
+        System.exit(0);  // Platform.exit();
     }
 
     @FXML
     private void showAuthor(ActionEvent event) {
         ViewNavigation.loadView(Configs.AUTHOR_INFO);
+    }
+
+    @FXML
+    private void launchAccountingApp(ActionEvent event) {
+        ViewNavigation.loadView(Configs.ACC_MAIN);
     }
 }

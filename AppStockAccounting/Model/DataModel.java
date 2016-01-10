@@ -16,6 +16,7 @@ import persaccounting.AppStockAccounting.Entity.Commodity;
  */
 
 public class DataModel {
+    
     private static DataModel instance;
     private static ObservableList<Commodity> cache;
     private static CommodityDAO dAO;

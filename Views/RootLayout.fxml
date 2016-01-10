@@ -9,9 +9,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.40" 
-            xmlns:fx="http://javafx.com/fxml/1" 
-            fx:controller="persaccounting.Views.RootLayoutController">
+<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Views.RootLayoutController">
   <children>
     <StackPane fx:id="viewHolder" layoutY="40.0" minHeight="-Infinity" prefHeight="644.0" prefWidth="577.0" snapToPixel="true" styleClass="background" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
       <padding>
@@ -26,9 +24,22 @@
         <Menu disable="false" mnemonicParsing="false" text="File">
           <items>
             <MenuItem mnemonicParsing="false" onAction="#showMainPage" text="Main Page" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
             <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
           </items>
         </Menu>
+            <Menu mnemonicParsing="false" text="Style">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Dark" />
+                  <MenuItem mnemonicParsing="false" text="Blue" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Accounting">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#launchAccountingApp" text="ListView" />
+                  <MenuItem mnemonicParsing="false" text="ItemView" />
+               </items>
+            </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Calculator">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#launchCalculator" text="Launch Calculator" />
@@ -54,7 +65,7 @@
                 <VBox id="VBox" alignment="CENTER" layoutX="5.0" layoutY="588.0" prefHeight="39.0" prefWidth="567.0" spacing="5.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
       <children>
         <Separator minHeight="2.0" prefHeight="2.9998779296875" prefWidth="722.0" />
-        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="738.0" text="Created by Olena Persianova&#10;2016, Kharkiv, UKRAINE" textAlignment="CENTER" textFill="#210066" underline="false">
+        <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="738.0" text="Created by Olena Persianova" textAlignment="CENTER" textFill="#210066" underline="false">
           <font>
             <Font size="10.0" />
           </font>

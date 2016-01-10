@@ -26,7 +26,7 @@ public class Commodity {
     
     // TODO: consider: implement 2nd constructor with attrs params in it
     public Commodity() {
-    	this.id = new SimpleIntegerProperty(-1000);
+        this.id = new SimpleIntegerProperty(-1000);
         this.commodityName = new SimpleStringProperty();
         this.commodityDescription = new SimpleStringProperty();        
         this.commodityQuantityInStock = new SimpleDoubleProperty();

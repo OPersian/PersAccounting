@@ -35,30 +35,10 @@ public class CalculatorController {
     private String current_str_number;
     private String whole_expression = "";    
 
-    @FXML private Button btnSum;
-    @FXML private Button btnSub;
-    @FXML private Button btnMul;
-    @FXML private Button btnDiv;
-    @FXML private Button btnClear;
     @FXML private Button btnStyle1;
     @FXML private Button btnStyle2;
-    @FXML private Button btnRad;
-    @FXML private Button btnDigit2;
-    @FXML private Button btnDigit1;
-    @FXML private Button btnDigit3;
-    @FXML private Button btnDigit4;
-    @FXML private Button btnDigit5;
-    @FXML private Button btnDigit7;
-    @FXML private Button btnDigit8;
-    @FXML private Button btnDigit6;
-    @FXML private Button btnDigit9;
-    @FXML private Button btnDigit0;
-    @FXML private Button btnPoint;
-    @FXML private Button btnEquals;
-    @FXML private Button btnChangeNumber; // TODO: implement
     @FXML private TextField display;      // result in particular
     @FXML private TextField wholeExpression;
-    @FXML private Button btnEraseLeft;    // TODO: implement
 
     @FXML
     private void handleStyleButtonAction(ActionEvent e) {
@@ -114,7 +94,8 @@ public class CalculatorController {
                     // System.out.println(a);
                     // System.out.println(Character.toString(a).matches("[＋－×÷]"));
                     if (Character.toString(a).matches("[＋－×÷]"))
-                        whole_expression = whole_expression.substring(0, len-1) + button_text;
+                        whole_expression = 
+                            whole_expression.substring(0, len-1) + button_text;
                     else whole_expression += button_text;
                 }
                 else whole_expression += button_text;
@@ -171,6 +152,4 @@ public class CalculatorController {
         }     
         
     }
-    
-
 }

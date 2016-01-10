@@ -14,7 +14,7 @@ public class DbUtil {
     static {
         Properties p = new Properties();
         InputStream input = Thread.currentThread().getContextClassLoader()
-                        .getResourceAsStream("database.properties");
+                        .getResourceAsStream("database.properties");        
         try {
             p.load(input);
             input.close();
@@ -26,6 +26,7 @@ public class DbUtil {
                             .append("&characterEncoding=")
                             .append(p.getProperty("characterEncoding")).toString();
         } catch (IOException e) {
+            System.out.println(input);
             e.printStackTrace();
         }
     }
