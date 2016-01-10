@@ -137,7 +137,7 @@ public class CalculatorController {
             
             if (button_text.equals("rad")) {
                 // TODO: fix: 360
-                System.out.print(current_str_number);  // null360              
+                // System.out.print(current_str_number);  // null360              
                 left = new BigDecimal(current_str_number);
                 // System.out.print("-----left----" + left);
                 

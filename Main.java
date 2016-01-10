@@ -13,7 +13,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import persaccounting.Controllers.RootLayoutController;
+import persaccounting.Views.RootLayoutController;
 
 
 /**
@@ -31,9 +31,11 @@ public class Main extends Application {
         // get default style from configs mapper:
         Mapper mapper = new Mapper();
         // System.out.println(mapper.scene_style_mapper); // debug
-        Map<String, String> current_scene_style_mapper = mapper.scene_style_mapper.get(Globals.currentSubView);
+        Map<String, String> current_scene_style_mapper = 
+                mapper.scene_style_mapper.get(Globals.currentSubView);
         System.out.println(current_scene_style_mapper); // debug
-        String current_default_style = current_scene_style_mapper.get(Mapper.default_style);
+        String current_default_style = 
+                current_scene_style_mapper.get(Mapper.default_style);
         // String current_default_style = (String) current_default_style_obj;
         
         // styling:

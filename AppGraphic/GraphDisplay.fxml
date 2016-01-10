@@ -11,7 +11,9 @@
 <?import javafx.scene.chart.NumberAxis?>
 
 
-<AnchorPane prefHeight="452.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppGraphic.GraphDisplayController">
+<AnchorPane prefHeight="452.0" prefWidth="394.0" xmlns="http://javafx.com/javafx/8.0.40" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="persaccounting.AppGraphic.GraphDisplayController">
    <children>
       <BorderPane layoutX="19.0" layoutY="75.0">
          <center>

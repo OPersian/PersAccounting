@@ -9,7 +9,9 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Controllers.RootLayoutController">
+<AnchorPane id="AnchorPane" prefHeight="659.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/8.0.40" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="persaccounting.Views.RootLayoutController">
   <children>
     <StackPane fx:id="viewHolder" layoutY="40.0" minHeight="-Infinity" prefHeight="644.0" prefWidth="577.0" snapToPixel="true" styleClass="background" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="40.0">
       <padding>

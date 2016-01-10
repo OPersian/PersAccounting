@@ -15,25 +15,27 @@ public class Configs {
     public static final String ROOT_LAYOUT =    "/persaccounting/Views/RootLayout.fxml"; 
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
     public static final String AUTHOR_INFO =    "/persaccounting/Views/AuthorInfo.fxml"; 
-    public static final String CALCULATOR =     "/persaccounting/Calculator/CalculatorFXML.fxml"; 
-    public static final String GRAPH_DISPLAY =  "/persaccounting/Graphic/GraphDisplay.fxml";
-    public static final String ACCOUNTING =     "/persaccounting/StockAccountung/MainAccounting.fxml";
+    public static final String CALCULATOR =     "/persaccounting/AppCalculator/CalculatorFXML.fxml"; 
+    public static final String GRAPH_DISPLAY =  "/persaccounting/AppGraphic/GraphDisplay.fxml";
+    public static final String ACCOUNTING =     "/persaccounting/AppStockAccountung/MainAccounting.fxml";
     /*------------------------END navigation on scenes-----------------------*/    
 
-    /*--------------------------------styling--------------------------------*/ 
+    /*--------------------------------styling--------------------------------*/     
+    // graph styling
     public static String graph_default_style = 
-            "/persaccounting/StaticFiles/graph_default_style.css";
+            "/persaccounting/StaticFiles/CSS/graph_default_style.css";
     public static String graph_style_1 = 
-            "/persaccounting/StaticFiles/graph_style_1.css";
+            "/persaccounting/StaticFiles/CSS/graph_style_1.css";
     public static String graph_style_2 = 
-            "/persaccounting/StaticFiles/graph_style_2.css";   
-
+            "/persaccounting/StaticFiles/CSS/graph_style_2.css";   
+    
+    // calc styling
     public static String calculator_default_style = 
-            "/persaccounting/StaticFiles/calc_default_style.css";
+            "/persaccounting/StaticFiles/CSS/calc_default_style.css";
     public static String calculator_style_1 = 
-            "/persaccounting/StaticFiles/calc_style_1.css";
+            "/persaccounting/StaticFiles/CSS/calc_style_1.css";
     public static String calculator_style_2 = 
-            "/persaccounting/StaticFiles/calc_style_2.css";   
+            "/persaccounting/StaticFiles/CSS/calc_style_2.css";   
     /*----------------------------END styling--------------------------------*/  
     
 }

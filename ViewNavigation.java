@@ -5,7 +5,7 @@
  */
 package persaccounting;
 
-import persaccounting.Controllers.RootLayoutController;
+import persaccounting.Views.RootLayoutController;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 
