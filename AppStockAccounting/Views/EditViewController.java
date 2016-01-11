@@ -5,11 +5,8 @@
  */
 package persaccounting.AppStockAccounting.Views;
 
-import java.net.URL;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import persaccounting.AppStockAccounting.Entity.Commodity;
@@ -20,7 +17,7 @@ import persaccounting.Auxiliaries.AlertManagement;
  *
  * @author Olena
  */
-public class EditViewController implements Initializable {
+public class EditViewController  {
 
     @FXML private TextField commodityNameField;
     @FXML private TextField commodityDescriptionField;
@@ -30,14 +27,6 @@ public class EditViewController implements Initializable {
     private Stage dialogStage;
     private Commodity commodity;
     private boolean okClicked = false;
-        
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }   
     
     /**
      * Sets the stage of this dialog.

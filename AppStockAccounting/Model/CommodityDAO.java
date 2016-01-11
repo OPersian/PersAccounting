@@ -98,8 +98,13 @@ public class CommodityDAO {
             preparedStatement.setString(1, c.getCommodityName());
             preparedStatement.setString(2, c.getCommodityDescription());
             preparedStatement.setDouble(3, c.getCommodityQuantityInStock());
-            preparedStatement.setDouble(4, c.getCommodityPriceWithoutTax());			
+            preparedStatement.setDouble(4, c.getCommodityPriceWithoutTax());
+            
+            System.out.println("-----------------SQL_INSERT-----------------"); // debug            
+            System.out.println("Creating SQL_INSERT java statement..."); // debug                
             preparedStatement.executeUpdate();
+            System.out.println("SQL query has been successfully executed."); // debug
+            
             ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
         if (generatedKeys.next()) {
             c.setId(generatedKeys.getInt(1));
@@ -114,7 +119,12 @@ public class CommodityDAO {
         try {
             PreparedStatement preparedStatement = con.prepareStatement(SQL_DELETE);
             preparedStatement.setInt(1, commoditytId);
+            
+            System.out.println("-----------------SQL_DELETE-----------------"); // debug            
+            System.out.println("Creating SQL_DELETE java statement..."); // debug            
             preparedStatement.executeUpdate();
+            System.out.println("SQL query has been successfully executed."); // debug
+
             preparedStatement.close();
         } catch (Exception e) {
             // TODO: implement; OPersian's note
@@ -129,7 +139,12 @@ public class CommodityDAO {
             preparedStatement.setDouble(3, c.getCommodityQuantityInStock());
             preparedStatement.setDouble(4, c.getCommodityPriceWithoutTax());			
             preparedStatement.setInt(5, c.getId());
+            
+            System.out.println("-----------------UPDATE-----------------"); // debug            
+            System.out.println("Creating SQL_UPDATE java statement..."); // debug
             preparedStatement.executeUpdate();
+            System.out.println("SQL query has been successfully executed."); // debug
+            
             preparedStatement.close();
         } catch (Exception e) {
             // TODO: implement; OPersian's note
@@ -139,7 +154,9 @@ public class CommodityDAO {
     public List<Commodity> getAllCommodities() {
         List<Commodity> commoditiestList = new ArrayList<Commodity>();
         try {
-            System.out.println("Creating java statement..."); // debug
+            System.out.println("========================================="); // debug                        
+            System.out.println("-----------------GET_ALL-----------------"); // debug            
+            System.out.println("Creating GET_ALL java statement..."); // debug
             Statement statement = con.createStatement();
             
             System.out.println("Executing the next SQL query: \n" + SQL_SELECT_ALL); // debug
@@ -168,6 +185,7 @@ public class CommodityDAO {
         try {
             PreparedStatement preparedStatement = con.prepareStatement(SQL_SELECT_BY_ID);
             preparedStatement.setInt(1, commodityId);
+            // TODO: prints to debug
             ResultSet rs = preparedStatement.executeQuery();
             if (rs.next()) {
                 c.setId(rs.getInt("id"));

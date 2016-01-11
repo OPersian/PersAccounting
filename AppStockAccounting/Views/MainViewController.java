@@ -26,6 +26,7 @@ import persaccounting.AppStockAccounting.Utils.SummaryCalculations;
 import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
 import persaccounting.Main;
+import persaccounting.ViewNavigation;
 
 /**
  * FXML Controller class
@@ -57,13 +58,34 @@ public class MainViewController implements Initializable {
         model = DataModel.GetInstance();
         System.out.println("The next DataModel obj is found (if any): \n" + model); // debug
         model.load();
-        // Initialize commodities table with four columns.
+        
+        // Initialize commodities table of four columns:     
         commodityNameColumn.setCellValueFactory(new PropertyValueFactory<>("commodityName"));
         commodityDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("commodityDescription"));
         commodityQuantityInStockColumn.setCellValueFactory(new PropertyValueFactory<>("commodityQuantityInStock"));
-        commodityPriceWithoutTaxColumn.setCellValueFactory(new PropertyValueFactory<>("commodityPriceWithoutTax"));
-        // averageColumn.setCellValueFactory(cellData -> cellData.getValue().calculatePriceAverage().asObject());
-        sM = commoditiesTable.getSelectionModel();
+        commodityPriceWithoutTaxColumn.setCellValueFactory(new PropertyValueFactory<>("commodityPriceWithoutTax"));         
+        
+        // Initialize and populate commodities table of four (?) columns:
+        /*
+        commodityNameColumn.setCellValueFactory(cellData -> cellData.getValue().commodityNameProperty());
+        commodityDescriptionColumn.setCellValueFactory(cellData -> cellData.getValue().commodityNameDescription());
+        */
+        // commodityQuantityInStockColumn.setCellValueFactory(cellData -> cellData.getValue().commodityQuantityInStockProperty());
+        // commodityPriceWithoutTaxColumn.setCellValueFactory(cellData -> cellData.getValue().commodityPriceWithoutTaxProperty()); 
+        
+        // TODO: implement (not required):
+        // averageColumn.setCellValueFactory(cellData -> cellData.getValue().calculateTotalValue().asObject());
+        
+        sM = commoditiesTable.getSelectionModel(); // TODO: consider: usage cases   
+        
+        model.clear(); // TODO: find other decision (SQL query GET_ALL is still duplicated!)
+        model.load();
+        
+        /*  non-recommended approach is below; refer to:
+            https://docs.oracle.com/javafx/2/api/javafx/scene/control/ListView.html 
+        */
+        commoditiesTable.getItems().setAll(model.getCache());
+        
         totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
         totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
         totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
@@ -73,6 +95,7 @@ public class MainViewController implements Initializable {
     public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
         commoditiesTable.setItems(model.getCache());
+        // model.clear();
     }
 
     /**
@@ -86,8 +109,7 @@ public class MainViewController implements Initializable {
     
     // TODO: refactor with regard to sub-view! OPersian's note; 
     public boolean showCommodityEditDialog(Commodity commodity) {
-        try {
-            
+        try {            
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(Main.class.getResource(Configs.ACC_EDIT_VIEW));
@@ -104,7 +126,6 @@ public class MainViewController implements Initializable {
             EditViewController controller = loader.getController();
             controller.setDialogStage(dialogStage);
             controller.setCommodity(commodity);
-            
             
             // Show the dialog and wait until the user closes it
             dialogStage.showAndWait();
@@ -130,6 +151,8 @@ public class MainViewController implements Initializable {
             totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
             totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
             totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
+            
+            ViewNavigation.loadView(Configs.ACC_MAIN); // instant table reload
         }
     }
 
@@ -142,6 +165,9 @@ public class MainViewController implements Initializable {
             totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
             totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
             totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
+            
+            ViewNavigation.loadView(Configs.ACC_MAIN); // instant table reload
+            
         } else {
             // Nothing selected.
             AlertManagement.displayPreventionAlert(
@@ -162,6 +188,8 @@ public class MainViewController implements Initializable {
                 totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
                 totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
                 totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
+                
+                ViewNavigation.loadView(Configs.ACC_MAIN); // instant table reload
             }
 
         } else {
