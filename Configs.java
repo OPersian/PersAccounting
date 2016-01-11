@@ -11,6 +11,7 @@ package persaccounting;
  */
 
 public class Configs {
+    
     /*--------------------------navigation on scenes-------------------------*/ 
     public static final String ROOT_LAYOUT =    "/persaccounting/Views/RootLayout.fxml"; 
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
@@ -21,25 +22,39 @@ public class Configs {
     public static final String ACC_MAIN =       "/persaccounting/AppStockAccounting/Views/MainView.fxml";
     /*------------------------END navigation on scenes-----------------------*/    
 
+    
     /*--------------------------------styling--------------------------------*/     
     // graph styling
-    public static String graph_default_style = 
+    public static final String graph_default_style = 
             "/persaccounting/StaticFiles/CSS/graph_default_style.css";
-    public static String graph_style_1 = 
+    public static final String graph_style_1 = 
             "/persaccounting/StaticFiles/CSS/graph_style_1.css";
-    public static String graph_style_2 = 
+    public static final String graph_style_2 = 
             "/persaccounting/StaticFiles/CSS/graph_style_2.css";   
     
     // calc styling
-    public static String calculator_default_style = 
+    public static final String calculator_default_style = 
             "/persaccounting/StaticFiles/CSS/calc_default_style.css";
-    public static String calculator_style_1 = 
+    public static final String calculator_style_1 = 
             "/persaccounting/StaticFiles/CSS/calc_style_1.css";
-    public static String calculator_style_2 = 
+    public static final String calculator_style_2 = 
             "/persaccounting/StaticFiles/CSS/calc_style_2.css"; 
     
     // acc styling
     // TODO    
     /*----------------------------END styling--------------------------------*/  
+
     
+    /*----------------------------db connection------------------------------*/  
+    // refer to: http://www.tutorialspoint.com/jdbc/jdbc-sample-code.htm
+    
+    // JDBC driver name and database URL
+    public static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
+    public static final String DB_URL = "jdbc:mysql://localhost:3306/persaccounting";
+
+    //  Database credentials
+    public static final String USER = "admin";  // TODO: consider "root"
+    public static final String PASS = "admin";
+    /*-------------------------END db connection-----------------------------*/  
+   
 }

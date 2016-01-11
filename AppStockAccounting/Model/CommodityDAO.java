@@ -14,6 +14,7 @@ import java.util.List;
 import java.sql.*;
 import persaccounting.AppStockAccounting.Entity.Commodity;
 import persaccounting.AppStockAccounting.Utils.DbUtil;
+import persaccounting.Configs;
 
 /**
  *
@@ -51,7 +52,23 @@ public class CommodityDAO {
         "select * from commodity where id=?";
 
     private CommodityDAO() {
-        con = DbUtil.getConnection();
+        // con = DbUtil.getConnection();
+        try {
+            // Register JDBC driver
+            Class.forName(Configs.JDBC_DRIVER);
+            
+            // Open a connection
+            System.out.println("Connecting to database..."); // debug
+            con = DriverManager.getConnection(
+                    Configs.DB_URL,
+                    Configs.USER,
+                    Configs.PASS);
+            System.out.println("Successfully connected to db."); // debug
+            
+        } catch(Exception e){
+            //Handle errors for Class.forName
+            e.printStackTrace(); 
+        }
     }
 
     public static CommodityDAO getInstance() {
@@ -111,8 +128,13 @@ public class CommodityDAO {
     public List<Commodity> getAllCommodities() {
         List<Commodity> commoditiestList = new ArrayList<Commodity>();
         try {
+            System.out.println("Creating java statement..."); // debug
             Statement statement = con.createStatement();
+            
+            System.out.println("Executing the next SQL query: \n" + SQL_SELECT_ALL); // debug
             ResultSet rs = statement.executeQuery(SQL_SELECT_ALL);
+            System.out.println("SQL query is successfully executed."); // debug
+            
             while (rs.next()) {
                 Commodity c = new Commodity();				
                 c.setId(rs.getInt("id"));

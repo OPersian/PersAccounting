@@ -55,6 +55,7 @@ public class MainViewController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         model = DataModel.GetInstance();
+        System.out.println("The next DataModel obj is found (if any): \n" + model); // debug
         model.load();
         // Initialize commodities table with four columns.
         commodityNameColumn.setCellValueFactory(new PropertyValueFactory<>("commodityName"));

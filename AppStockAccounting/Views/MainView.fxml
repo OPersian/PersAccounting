@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="400.0" prefWidth="543.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppStockAccounting.Views.MainViewController">
+<BorderPane prefHeight="342.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppStockAccounting.Views.MainViewController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
@@ -25,7 +25,7 @@
     <center>
       <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
          <content>
-            <TableView fx:id="commoditiesTable" prefHeight="237.0" prefWidth="416.0">
+            <TableView fx:id="commoditiesTable" prefHeight="175.0" prefWidth="541.0">
               <columns>
                 <TableColumn fx:id="commodityNameColumn" prefWidth="75.0" text="Name" />
                 <TableColumn fx:id="commodityDescriptionColumn" prefWidth="75.0" text="Description" />
