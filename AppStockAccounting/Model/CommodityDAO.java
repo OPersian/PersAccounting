@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import persaccounting.AppStockAccounting.Entity.Commodity;
-import persaccounting.AppStockAccounting.Utils.DbUtil;
 import persaccounting.Configs;
 
 /**
@@ -53,22 +52,34 @@ public class CommodityDAO {
 
     private CommodityDAO() {
         // con = DbUtil.getConnection();
+        
+        // Register JDBC driver:
         try {
-            // Register JDBC driver
-            Class.forName(Configs.JDBC_DRIVER);
-            
-            // Open a connection
+            System.out.println("Searching for JDBC_DRIVER..."); // debug
+            Class.forName(Configs.JDBC_DRIVER);  // ClassNotFoundException
+            /* java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/persaccounting */
+            System.out.println("JDBC_DRIVER has been found."); // debug 
+        } catch (ClassNotFoundException e) {
+            System.out.println("-------- JDBC_DRIVER could not be found! --------");
+            e.printStackTrace();
+            // TODO: add logic as required
+        }
+        
+        // Open a connection:
+        try {
             System.out.println("Connecting to database..."); // debug
             con = DriverManager.getConnection(
                     Configs.DB_URL,
                     Configs.USER,
                     Configs.PASS);
-            System.out.println("Successfully connected to db."); // debug
-            
-        } catch(Exception e){
-            //Handle errors for Class.forName
-            e.printStackTrace(); 
-        }
+            System.out.println("Successfully connected to db."); // debug 
+        } catch (SQLException error) {
+            error.printStackTrace();
+            // TODO: add logic as required
+        } catch(Exception error){
+            error.printStackTrace();
+            // TODO: add logic as required
+        } 
     }
 
     public static CommodityDAO getInstance() {
@@ -133,7 +144,7 @@ public class CommodityDAO {
             
             System.out.println("Executing the next SQL query: \n" + SQL_SELECT_ALL); // debug
             ResultSet rs = statement.executeQuery(SQL_SELECT_ALL);
-            System.out.println("SQL query is successfully executed."); // debug
+            System.out.println("SQL query has been successfully executed."); // debug
             
             while (rs.next()) {
                 Commodity c = new Commodity();				
