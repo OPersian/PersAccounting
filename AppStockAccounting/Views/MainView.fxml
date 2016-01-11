@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.input.*?>
 <?import javafx.scene.image.*?>
@@ -8,72 +9,63 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="342.0" prefWidth="455.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppStockAccounting.Views.MainViewController">
+<BorderPane prefHeight="656.0" prefWidth="612.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppStockAccounting.Views.MainViewController">
    <top>
       <VBox BorderPane.alignment="CENTER">
          <children>
-            <ToolBar prefHeight="40.0" prefWidth="200.0">
+            <ToolBar prefHeight="36.0" prefWidth="455.0" styleClass="background">
               <items>
                   <Button mnemonicParsing="false" onAction="#handleAdd" styleClass="addbtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
                   <Button layoutX="54.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleEdit" styleClass="edibtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
                   <Button layoutX="98.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleDelete" styleClass="deletebtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
               </items>
             </ToolBar>
+            <GridPane alignment="TOP_CENTER">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Total Sum without Tax" GridPane.columnSpan="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="totalSumWithoutTaxField" editable="false" GridPane.columnIndex="1" />
+                  <Label layoutX="10.0" layoutY="17.0" text="Total Tax Sum" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="totalTaxSumField" editable="false" layoutX="210.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Label text="Total Sum Tax included" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="totalSumTaxInclField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>              
+            </GridPane>
          </children>
       </VBox>
    </top>
-    <center>
-      <ScrollPane fitToHeight="true" fitToWidth="true" BorderPane.alignment="CENTER">
-         <content>
-            <TableView fx:id="commoditiesTable" prefHeight="175.0" prefWidth="541.0">
-              <columns>
-                <TableColumn fx:id="commodityNameColumn" prefWidth="75.0" text="Name" />
-                <TableColumn fx:id="commodityDescriptionColumn" prefWidth="75.0" text="Description" />
-                  <TableColumn fx:id="commodityQuantityInStockColumn" prefWidth="75.0" text="Quantity" />
-                  <TableColumn fx:id="commodityPriceWithoutTaxColumn" prefWidth="75.0" text="Price" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /> 
-                  <!-- not to be confused: NetBeans shows an error -->
-               </columnResizePolicy>
-            </TableView>
-         </content>
-      </ScrollPane>
+   <center>
+      <TableView fx:id="commoditiesTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="commodityNameColumn" prefWidth="75.0" text="Name" />
+          <TableColumn fx:id="commodityDescriptionColumn" prefWidth="75.0" text="Description" />
+            <TableColumn fx:id="commodityQuantityInStockColumn" prefWidth="75.0" text="Quantity" />
+            <TableColumn fx:id="commodityPriceWithoutTaxColumn" prefWidth="75.0" text="Price" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" /> 
+            <!-- not to be confused: NetBeans shows an error -->
+         </columnResizePolicy>
+      </TableView>
    </center>
-   <bottom>
-      <GridPane alignment="TOP_CENTER" BorderPane.alignment="CENTER">
-        <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-        </columnConstraints>
-        <rowConstraints>
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-        </rowConstraints>
-         <children>
-            <Label text="Total Sum without Tax" GridPane.columnSpan="2">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <TextField fx:id="totalSumWithoutTaxField" editable="false" GridPane.columnIndex="1" />
-            <Label layoutX="10.0" layoutY="17.0" text="Total Tax Sum" GridPane.columnSpan="2" GridPane.rowIndex="1">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <TextField fx:id="totalTaxSumField" editable="false" layoutX="210.0" layoutY="13.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Total Sum Tax included" GridPane.columnSpan="2" GridPane.rowIndex="2">
-               <GridPane.margin>
-                  <Insets left="10.0" />
-               </GridPane.margin>
-            </Label>
-            <TextField fx:id="totalSumTaxInclField" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-         </children>
-         <BorderPane.margin>
-            <Insets />
-         </BorderPane.margin>              
-      </GridPane>
-   </bottom>
 </BorderPane>
