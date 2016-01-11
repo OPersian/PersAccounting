@@ -96,10 +96,9 @@ public class MainViewController implements Initializable {
             Stage dialogStage = new Stage();
             dialogStage.setTitle("Edit Commodity");
             dialogStage.initModality(Modality.WINDOW_MODAL);
-            dialogStage.initOwner(mainApp.getPrimaryStage());
+            // dialogStage.initOwner(mainApp.getPrimaryStage()); // TODO: refactor: set icon in other way
             Scene scene = new Scene(page);
-            dialogStage.setScene(scene);
-            
+            dialogStage.setScene(scene);            
             
             // Set the commodity into the controller.
             EditViewController controller = loader.getController();
