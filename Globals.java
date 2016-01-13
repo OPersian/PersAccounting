@@ -13,6 +13,6 @@ import javafx.collections.ObservableList;
  */
 public class Globals {
     public static ObservableList<String> mainScene; // stores scene from Main    
-    public static String currentSubView;  // stores current sub view
+    public static String currentSubViewName;  // stores current sub view
     public static boolean scalabilityOption = false; // resizability in View Settings (menuitem of View menu)
 }

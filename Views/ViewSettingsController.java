@@ -52,7 +52,7 @@ public class ViewSettingsController implements Initializable {
         mainApp.initMainWindow();
         */
         
-        // set currentSubView to view settings view:
+        // set currentSubViewName to view settings view:
         ViewNavigation.loadView(Configs.MAIN_PAGE); 
                
     }
@@ -72,7 +72,7 @@ public class ViewSettingsController implements Initializable {
         mainApp.initMainWindow();
         */
         
-        // set currentSubView to view settings view:
+        // set currentSubViewName to view settings view:
         ViewNavigation.loadView(Configs.MAIN_PAGE); 
     }
     

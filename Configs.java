@@ -16,7 +16,7 @@ public class Configs {
     public static final String ROOT_LAYOUT =    "/persaccounting/Views/RootLayout.fxml"; 
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
     public static final String AUTHOR_INFO =    "/persaccounting/Views/AuthorInfo.fxml"; 
-    public static final String VIEW_SETTINGS =    "/persaccounting/Views/ViewSettings.fxml"; 
+    public static final String VIEW_SETTINGS =   "/persaccounting/Views/ViewSettings.fxml"; 
     public static final String CALCULATOR =     "/persaccounting/AppCalculator/CalculatorFXML.fxml"; 
     public static final String GRAPH_DISPLAY =  "/persaccounting/AppGraphic/GraphDisplay.fxml";
     public static final String ACC_EDIT_VIEW =  "/persaccounting/AppStockAccounting/Views/EditView.fxml";
@@ -32,15 +32,15 @@ public class Configs {
 
     // graph styling
     public static final String graph_style_1 = 
-            "/persaccounting/StaticFiles/CSS/graph_style_1.css";
+            "/persaccounting/StaticFiles/CSS/style_1.css"; // graph_style_1
     public static final String graph_style_2 = 
-            "/persaccounting/StaticFiles/CSS/graph_style_2.css";   
+            "/persaccounting/StaticFiles/CSS/style_2.css"; // graph_style_2
     
     // calc styling
     public static final String calculator_style_1 = 
-            "/persaccounting/StaticFiles/CSS/calc_style_1.css";
+            "/persaccounting/StaticFiles/CSS/style_1.css"; // calc_style_1
     public static final String calculator_style_2 = 
-            "/persaccounting/StaticFiles/CSS/calc_style_2.css"; 
+            "/persaccounting/StaticFiles/CSS/style_2.css"; // calc_style_2
     
     // acc styling
     // TODO 

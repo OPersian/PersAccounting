@@ -45,7 +45,7 @@ public class Main extends Application {
         Mapper mapper = new Mapper();
         // System.out.println(mapper.scene_style_mapper); // debug
         Map<String, String> current_scene_style_mapper = 
-                mapper.scene_style_mapper.get(Globals.currentSubView);
+                mapper.scene_style_mapper.get(Globals.currentSubViewName);
         System.out.println(current_scene_style_mapper); // debug
         String current_default_style = 
                 current_scene_style_mapper.get(Mapper.default_style);

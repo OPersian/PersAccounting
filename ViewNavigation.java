@@ -31,8 +31,8 @@ public class ViewNavigation {
                     )
                 )         
             );
-            Globals.currentSubView = fxml;
-            System.out.println(Globals.currentSubView); // debug
+            Globals.currentSubViewName = fxml;
+            System.out.println(Globals.currentSubViewName); // debug
         }
         catch (IOException e) {
             e.printStackTrace();
