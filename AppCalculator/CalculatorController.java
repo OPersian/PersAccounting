@@ -29,10 +29,10 @@ public class CalculatorController {
             getResource(Configs.calculator_style_2).toExternalForm();
 
     // TODO: refactor
-    private BigDecimal left;
+    private BigDecimal left; // left_str_number
     private String selectedOperator;
     private boolean numberInputting;
-    private String current_str_number;
+    private String current_str_digit;
     private String whole_expression = "";    
 
     @FXML private Button btnStyle1;
@@ -64,9 +64,9 @@ public class CalculatorController {
                 left = BigDecimal.ZERO;
                 selectedOperator = "";
                 numberInputting = false;
-                current_str_number = "0";
+                current_str_digit = "0";
                 whole_expression = "";
-                display.setText(current_str_number);            
+                display.setText(current_str_digit);            
                 // return;
             }
 
@@ -74,17 +74,17 @@ public class CalculatorController {
                 if (!numberInputting) {
                     numberInputting = true;
                     display.clear();
-                    current_str_number = "";
+                    current_str_digit = "";
                 }
                 display.appendText(button_text);
-                current_str_number = button_text; // TODO: consider
+                current_str_digit = button_text; // TODO: consider
                 whole_expression += button_text;
                 // return;
             }
 
             if (button_text.matches("[＋－×÷]")) {
                 left = new BigDecimal(display.getText());
-                // left = new BigDecimal(current_str_number);
+
                 selectedOperator = button_text;
                 numberInputting = false;
                 char a;
@@ -103,42 +103,47 @@ public class CalculatorController {
             }        
 
             if (button_text.equals("=")) {            
-                // final BigDecimal right = numberInputting ? new BigDecimal(display.getText()) : left;
-                // System.out.println(numberInputting);  // debug
-                final BigDecimal right = numberInputting ? new BigDecimal(current_str_number) : left;
-                // System.out.println(selectedOperator);  // debug
+                final BigDecimal right = numberInputting ? new BigDecimal(display.getText()) : left;
+                
+                /*
+                // debug:
+                System.out.print(left);
+                System.out.print(selectedOperator);
+                System.out.print(right);
+                System.out.println("--------");
+                */
+
                 left = Utils.calculate(selectedOperator, left, right);
-                current_str_number = left.toString(); // result
-                display.setText(current_str_number);
+                current_str_digit = left.toString(); // result
+                display.setText(current_str_digit);
                 numberInputting = false;
-                // System.out.println(current_str_number);  // debug
-                whole_expression = "";
+                // System.out.println(current_str_digit);  // debug
+                whole_expression = current_str_digit; // ""
                 // return;            
             }
             
             if (button_text.equals("rad")) {
-                // TODO: fix: 360
-                // System.out.print(current_str_number);  // null360              
-                left = new BigDecimal(current_str_number);
-                // System.out.print("-----left----" + left);
+                left = new BigDecimal(display.getText()); // whole_expression  // current_str_digit
+                System.out.println("-----left----" + left);  // debug
                 
                 if (Utils.isInRange(left) == true) {
                     double rad_result = Math.toRadians(left.doubleValue()); // TODO: test
-                    current_str_number = Double.toString(rad_result); // result
-                    display.setText(current_str_number);
+                    current_str_digit = Double.toString(rad_result); // result
+                    display.setText(current_str_digit);
+                    whole_expression = current_str_digit; // ""
                 }
                 else {
-                    // current_str_number = "Enter number between 0 and 360"; // TODO: throw exception
                     AlertManagement.displayErrorAlert("performing math operations. "
                         + "\nPlease ensure you have correctly "
                         + "\nentered the numbers.", 
                         "Enter number between 0 and 360");
                     display.clear();
+                    whole_expression = "";
                 }                       
                 
-                // display.setText(current_str_number);
+                // display.setText(current_str_digit);
                 numberInputting = false;
-                whole_expression = "";
+                // whole_expression = "";
             }
             wholeExpression.setText(whole_expression); 
         }        

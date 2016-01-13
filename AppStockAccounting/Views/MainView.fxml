@@ -55,7 +55,7 @@
       </VBox>
    </top>
    <center>
-      <TableView fx:id="commoditiesTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="418.0" prefWidth="610.0" BorderPane.alignment="CENTER">
+      <TableView fx:id="commoditiesTable" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="390.0" prefWidth="610.0" BorderPane.alignment="CENTER">
         <columns>
           <TableColumn fx:id="commodityNameColumn" prefWidth="75.0" text="Name" />
           <TableColumn fx:id="commodityDescriptionColumn" prefWidth="75.0" text="Description" />
