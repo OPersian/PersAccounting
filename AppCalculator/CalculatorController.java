@@ -37,7 +37,7 @@ public class CalculatorController {
 
     @FXML private Button btnStyle1;
     @FXML private Button btnStyle2;
-    @FXML private TextField display;      // result in particular
+    @FXML private TextField display; // result in particular
     @FXML private TextField wholeExpression;
 
     @FXML
@@ -77,7 +77,7 @@ public class CalculatorController {
                     current_str_digit = "";
                 }
                 display.appendText(button_text);
-                current_str_digit = button_text; // TODO: consider
+                current_str_digit = button_text;
                 whole_expression += button_text;
                 // return;
             }
@@ -91,8 +91,6 @@ public class CalculatorController {
                 int len = whole_expression.length();
                 if (len >= 1) {
                     a = whole_expression.charAt(len-1);
-                    // System.out.println(a);
-                    // System.out.println(Character.toString(a).matches("[＋－×÷]"));
                     if (Character.toString(a).matches("[＋－×÷]"))
                         whole_expression = 
                             whole_expression.substring(0, len-1) + button_text;
@@ -117,20 +115,19 @@ public class CalculatorController {
                 current_str_digit = left.toString(); // result
                 display.setText(current_str_digit);
                 numberInputting = false;
-                // System.out.println(current_str_digit);  // debug
                 whole_expression = current_str_digit; // ""
                 // return;            
             }
             
             if (button_text.equals("rad")) {
-                left = new BigDecimal(display.getText()); // whole_expression  // current_str_digit
+                left = new BigDecimal(display.getText());
                 System.out.println("-----left----" + left);  // debug
                 
                 if (Utils.isInRange(left) == true) {
-                    double rad_result = Math.toRadians(left.doubleValue()); // TODO: test
+                    double rad_result = Math.toRadians(left.doubleValue());
                     current_str_digit = Double.toString(rad_result); // result
                     display.setText(current_str_digit);
-                    whole_expression = current_str_digit; // ""
+                    whole_expression = current_str_digit;
                 }
                 else {
                     AlertManagement.displayErrorAlert("performing math operations. "
