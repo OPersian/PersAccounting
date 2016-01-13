@@ -16,32 +16,35 @@ public class Configs {
     public static final String ROOT_LAYOUT =    "/persaccounting/Views/RootLayout.fxml"; 
     public static final String MAIN_PAGE =      "/persaccounting/Views/MainPage.fxml";
     public static final String AUTHOR_INFO =    "/persaccounting/Views/AuthorInfo.fxml"; 
+    public static final String VIEW_SETTINGS =    "/persaccounting/Views/ViewSettings.fxml"; 
     public static final String CALCULATOR =     "/persaccounting/AppCalculator/CalculatorFXML.fxml"; 
     public static final String GRAPH_DISPLAY =  "/persaccounting/AppGraphic/GraphDisplay.fxml";
     public static final String ACC_EDIT_VIEW =  "/persaccounting/AppStockAccounting/Views/EditView.fxml";
-    public static final String ACC_MAIN =       "/persaccounting/AppStockAccounting/Views/MainView.fxml";
+    public static final String ACC_MAIN =       "/persaccounting/AppStockAccounting/Views/MainView.fxml";    
+    
     /*------------------------END navigation on scenes-----------------------*/    
 
     
     /*--------------------------------styling--------------------------------*/     
+    // general styling
+    public static final String default_style = 
+            "/persaccounting/StaticFiles/CSS/default_style.css";
+
     // graph styling
-    public static final String graph_default_style = 
-            "/persaccounting/StaticFiles/CSS/graph_default_style.css";
     public static final String graph_style_1 = 
             "/persaccounting/StaticFiles/CSS/graph_style_1.css";
     public static final String graph_style_2 = 
             "/persaccounting/StaticFiles/CSS/graph_style_2.css";   
     
     // calc styling
-    public static final String calculator_default_style = 
-            "/persaccounting/StaticFiles/CSS/calc_default_style.css";
     public static final String calculator_style_1 = 
             "/persaccounting/StaticFiles/CSS/calc_style_1.css";
     public static final String calculator_style_2 = 
             "/persaccounting/StaticFiles/CSS/calc_style_2.css"; 
     
     // acc styling
-    // TODO    
+    // TODO 
+    
     /*----------------------------END styling--------------------------------*/  
 
     

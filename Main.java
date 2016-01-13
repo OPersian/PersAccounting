@@ -9,8 +9,12 @@ import java.io.IOException;
 import java.util.Map;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import persaccounting.Views.RootLayoutController;
@@ -23,10 +27,12 @@ import persaccounting.Views.RootLayoutController;
 public class Main extends Application { 
 
     private Stage stage;
+    private Scene scene;
+    private Pane mainPane;
 
     /**
      * Returns the main stage. 
-     * Needed for Accounting app (EditView modal dialog).
+     * Needed for Accounting application (EditView modal dialog).
      * @return
      */
     public Stage getPrimaryStage() {
@@ -77,16 +83,32 @@ public class Main extends Application {
      */
     public void initMainWindow(){
         try {
-            stage.setScene(
-                createScene(
-                    loadMainPane()
-                )
-            );         
+            mainPane = loadMainPane();            
+            CheckBox chbDefineResizability = new CheckBox("Resizable");
+            chbDefineResizability.setLayoutX(470); // 10
+            chbDefineResizability.setLayoutY(50); // 50         
+            // chbDefineResizability.setAlignment(Pos.CENTER_RIGHT);
+            mainPane.getChildren().addAll(chbDefineResizability);            
+            
+            scene = createScene(mainPane);
+            stage.setScene(scene);         
             
             stage.setTitle("PersAccounting");
-            stage.setResizable(false);  // non-rezizable as required
+            
+            // non-rezizable by default:
+            stage.setResizable(Globals.scalabilityOption);
+            
+            /*
+            CheckBox chb = new CheckBox("Resizable");
+            VBox layout1 = new VBox();
+            layout1.getChildren().addAll(chb);
+            */
+            
             // styling:
-            stage.initStyle(StageStyle.UTILITY);          
+            stage.initStyle(StageStyle.UTILITY);
+            // bidirectional binding to change resizability option:
+            chbDefineResizability.selectedProperty().
+                    bindBidirectional(stage.resizableProperty());
                         
             stage.show();            
         } catch (IOException e) {

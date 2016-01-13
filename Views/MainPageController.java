@@ -7,10 +7,15 @@ package persaccounting.Views;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TitledPane;
+import javafx.scene.control.ToggleGroup;
+import javafx.stage.Stage;
+import persaccounting.Main;
 
 /**
  * FXML Controller class
@@ -19,6 +24,9 @@ import javafx.scene.control.TitledPane;
  */
 public class MainPageController implements Initializable {
 
+    private Main mainApp;
+    private Stage mainStage;
+            
     @FXML private TitledPane x2;
     @FXML private Label functionaliteLabel;
     @FXML private Label utiliteLabel;
@@ -56,6 +64,8 @@ public class MainPageController implements Initializable {
                 + "vous permet de sauvegarder, modifier et naviguer sur vos données de façon le plus efficace!"
                 + "\n"
                 + "\nDe plus, nous vous garantissons de vous bien soutenir pendant tout le période d'emploi de MotsApp!");
+
     }    
+
     
 }

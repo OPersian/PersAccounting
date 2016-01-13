@@ -60,4 +60,17 @@ public class RootLayoutController  {
     private void launchAccountingApp(ActionEvent event) {
         ViewNavigation.loadView(Configs.ACC_MAIN);
     }
+
+    @FXML
+    private void showViewSettings(ActionEvent event) {
+        ViewNavigation.loadView(Configs.VIEW_SETTINGS);
+    }
+
+    @FXML
+    private void setDarkStyle(ActionEvent event) {
+    }
+
+    @FXML
+    private void setBlueStyle(ActionEvent event) {
+    }
 }

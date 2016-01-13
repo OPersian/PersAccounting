@@ -13,6 +13,7 @@
 
 <AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="560.0" styleClass="background" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.Views.MainPageController">
   <children>
+      
     <AnchorPane id="AnchorPane" minHeight="-Infinity" prefHeight="500.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="5.0">
       <children>
         <!--http://www.javacodegeeks.com/2013/03/javafx-2-with-spring.html-->
@@ -48,7 +49,7 @@
             </TitledPane>
           </panes>
         </Accordion>
-        <Label alignment="CENTER" prefHeight="46.0" prefWidth="948.0" style="-fx-font: NORMAL 25 Tahoma;" text="Welcome to PersAccounting!" textAlignment="CENTER" underline="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="14.0">
+        <Label alignment="CENTER" layoutY="30.0" prefHeight="46.0" prefWidth="948.0" style="-fx-font: NORMAL 25 Tahoma;" text="Welcome to PersAccounting!" textAlignment="CENTER" underline="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="30.0">
           <font>
             <Font name="System Bold" size="20.0" />
           </font>

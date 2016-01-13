@@ -26,7 +26,7 @@ public class Mapper {
     
     /*
     Map<String, String> calc_style_scene_mapper = new HashMap() {{
-        calc_style_scene_mapper.put(default_style, calculator_default_style);
+        calc_style_scene_mapper.put(default_style, default_style);
         calc_style_scene_mapper.put(first_style, calculator_style_1);
         calc_style_scene_mapper.put(second_style, calculator_style_2);
     }};
@@ -44,11 +44,11 @@ public class Mapper {
     public Mapper(){
                 
         // submappers; TODO: refactor (resources overload)
-        calc_style_scene_mapper.put(default_style, Configs.calculator_default_style);
+        calc_style_scene_mapper.put(default_style, Configs.default_style);
         calc_style_scene_mapper.put(first_style, Configs.calculator_style_1);
         calc_style_scene_mapper.put(second_style, Configs.calculator_style_2);
         
-        graph_style_scene_mapper.put(default_style, Configs.graph_default_style);
+        graph_style_scene_mapper.put(default_style, Configs.default_style);
         graph_style_scene_mapper.put(first_style, Configs.graph_style_1);
         graph_style_scene_mapper.put(second_style, Configs.graph_style_2); 
         
@@ -62,6 +62,7 @@ public class Mapper {
         // TODO: reimplement (with appropriate stylings)
         scene_style_mapper.put(Configs.MAIN_PAGE, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.AUTHOR_INFO, calc_style_scene_mapper);
+        scene_style_mapper.put(Configs.VIEW_SETTINGS, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.ACC_EDIT_VIEW, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.ACC_MAIN, calc_style_scene_mapper);
         

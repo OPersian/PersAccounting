@@ -28,11 +28,16 @@
             <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
           </items>
         </Menu>
-            <Menu mnemonicParsing="false" text="Style">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Dark" />
-                  <MenuItem mnemonicParsing="false" text="Blue" />
-              </items>
+            <Menu mnemonicParsing="false" text="View">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showViewSettings" text="View Settings" />
+                  <Menu mnemonicParsing="false" text="Style">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#setDarkStyle" text="Dark" />
+                        <MenuItem mnemonicParsing="false" onAction="#setBlueStyle" text="Blue" />
+                    </items>
+                  </Menu>
+               </items>
             </Menu>
             <Menu mnemonicParsing="false" text="Accounting">
                <items>

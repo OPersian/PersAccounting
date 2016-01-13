@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="330.0" prefWidth="334.0" styleClass="background" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.40" fx:controller="persaccounting.Views.ViewSettingsController">
+   <children>
+      <RadioButton layoutX="53.0" layoutY="70.0" mnemonicParsing="false" onAction="#setNonResizable" text="No">
+         <toggleGroup>
+            <ToggleGroup fx:id="radioGroupScalabiity" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton layoutX="138.0" layoutY="70.0" mnemonicParsing="false" onAction="#setResizable" text="Yes" toggleGroup="$radioGroupScalabiity" />
+      <Label layoutX="33.0" layoutY="37.0" text="Scalability" />
+   </children>
+</AnchorPane>
