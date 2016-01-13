@@ -47,10 +47,10 @@ public class CalculatorController {
         // styleSheets = rootPane.getStylesheets();
         // System.out.println(styleSheets);
         if (clicked == btnStyle1) {
-            // Globals.mainScene.remove(style2URL);
+            Globals.mainScene.remove(style2URL);
             Globals.mainScene.add(style1URL);
         } else if (clicked == btnStyle2) {
-            // Globals.mainScene.remove(style1URL);
+            Globals.mainScene.remove(style1URL);
             Globals.mainScene.add(style2URL);
         }
     }

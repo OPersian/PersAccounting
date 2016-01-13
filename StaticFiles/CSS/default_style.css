@@ -202,7 +202,7 @@ and open the template in the editor.
 }
  
 .chart-legend-item{
-    -fx-text-fill: #191970;
+    -fx-text-fill: #d8d8d8; /* #191970 */
 }
 
 .chart-title {
