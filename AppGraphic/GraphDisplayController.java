@@ -11,7 +11,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart;
-import javafx.scene.control.Button;
 
 /**
  * FXML Controller class
@@ -25,8 +24,6 @@ public class GraphDisplayController implements Initializable {
      */
     
     @FXML private LineChart<Double, Double> chart;
-    @FXML private Button style_2;
-    @FXML private Button style_1;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
