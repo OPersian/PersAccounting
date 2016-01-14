@@ -26,12 +26,12 @@
       <menus>
         <Menu disable="false" mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#showMainPage" text="Main Page">
+            <MenuItem mnemonicParsing="false" onAction="#showMainPage" styleClass="iconMenuMain" text="Main Page">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="M" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit">
+            <MenuItem mnemonicParsing="false" onAction="#exit" styleClass="iconMenuExit" text="Exit">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="ESCAPE" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -50,19 +50,19 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Accounting">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchAccountingApp" text="ListView">
+                  <MenuItem mnemonicParsing="false" onAction="#launchAccountingApp" styleClass="iconMenuAcc" text="Main Book">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" onAction="#addItemMenu" text="Add..." />
-                  <MenuItem mnemonicParsing="false" onAction="#editItemMenu" text="Edit..." />
-                  <MenuItem mnemonicParsing="false" onAction="#deleteItemMenu" text="Delete..." />
+                  <MenuItem mnemonicParsing="false" onAction="#addItemMenu" styleClass="addItemMenu" text="Add..." />
+                  <MenuItem mnemonicParsing="false" onAction="#editItemMenu" styleClass="editItemMenu" text="Edit..." />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteItemMenu" styleClass="deleteItemMenu" text="Delete..." />
                </items>
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Calculator">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchCalculator" text="Launch Calculator">
+                  <MenuItem mnemonicParsing="false" onAction="#launchCalculator" styleClass="iconMenuCalc" text="Launch Calculator">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -70,7 +70,7 @@
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Graphic">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchGraph" text="Launch Graphic">
+                  <MenuItem mnemonicParsing="false" onAction="#launchGraph" styleClass="iconMenuGraph" text="Launch Graphic">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="G" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
@@ -81,11 +81,11 @@
         
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#showAbout" text="Info...">
+            <MenuItem mnemonicParsing="false" onAction="#showAbout" styleClass="iconMenuInfo" text="Info...">
                      <accelerator>
                         <KeyCodeCombination alt="UP" code="H" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
-            <MenuItem mnemonicParsing="false" onAction="#showAuthor" text="Author" />
+            <MenuItem mnemonicParsing="false" onAction="#showAuthor" styleClass="iconMenuAuthor" text="Author" />
           </items>
         </Menu>
       </menus>

@@ -136,6 +136,47 @@ and open the template in the editor.
     -fx-background-color: black;
 }
 
+/* --------------------------- MENU icons --------------------------- */
+.iconMenuMain > .label {
+    -fx-graphic: url("../Icons/MenuIcons/home.png");
+}
+
+.iconMenuExit > .label {
+    -fx-graphic: url("../Icons/MenuIcons/exit.png");
+}
+
+.iconMenuInfo > .label {
+    -fx-graphic: url("../Icons/MenuIcons/info.png");
+}
+
+.iconMenuAuthor > .label {
+    -fx-graphic: url("../Icons/MenuIcons/author_1.png");
+}
+
+.iconMenuAcc > .label {
+    -fx-graphic: url("../Icons/MenuIcons/accounting.png");
+}
+
+.addItemMenu > .label {
+    -fx-graphic: url("../Icons/MenuIcons/add-icon.png");
+}
+
+.editItemMenu > .label {
+    -fx-graphic: url("../Icons/MenuIcons/edit-icon.png");
+}
+
+.deleteItemMenu > .label {
+    -fx-graphic: url("../Icons/MenuIcons/delete-icon.png");
+}
+
+.iconMenuCalc > .label {
+    -fx-graphic: url("../Icons/MenuIcons/calc.png");
+}
+
+.iconMenuGraph > .label {
+    -fx-graphic: url("../Icons/MenuIcons/graph.png");
+}
+
 .text-field {
     -fx-font-size: 12pt;
     -fx-font-family: "Segoe UI Semibold";

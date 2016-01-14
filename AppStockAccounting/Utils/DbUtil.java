@@ -19,8 +19,8 @@ public class DbUtil {
         String path = "D:\\inet_technologies\\PersAccounting\\src\\persaccounting\\AppStockAccounting\\Utils";
         String javapath = path.replace("\\", "/");
         
-        String file_last_name = "database.properties";
-        String file_full_name = javapath + "/" + file_last_name;
+        String file_last_name = "/database.properties";
+        String file_full_name = javapath + file_last_name;
         
         String home = System.getProperty("user.home"); // C:\Users\Olena
         System.out.println(home); // debug
@@ -29,6 +29,7 @@ public class DbUtil {
                         .getResourceAsStream(file_full_name); // file_last_name
         try {
             p.load(input);
+            // Class.forName("com.mysql.jdbc.Driver");
             input.close();
             connectionString = new StringBuilder()
                             .append(p.getProperty("dburl")).append("?user=")
