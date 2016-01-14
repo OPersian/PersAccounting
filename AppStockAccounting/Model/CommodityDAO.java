@@ -5,6 +5,7 @@
  */
 package persaccounting.AppStockAccounting.Model;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -225,7 +226,7 @@ public class CommodityDAO {
         } catch (Exception e) { // NumberFormatException - in handleOK()
             
             AlertManagement.displayErrorAlert(
-                "while trying to updat commodity!",
+                "while trying to update commodity!",
                 e.toString());
             
             // debug:
@@ -256,10 +257,29 @@ public class CommodityDAO {
                 commoditiestList.add(c);				
             }
             statement.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            // TODO: implement; OPersian's note
+            
+        } catch (MySQLSyntaxErrorException e) { // NB: attention to import!
+         // com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'persaccounting.commodity' doesn't exist
+           
+            AlertManagement.displayErrorAlert(
+                "while trying to acces the database table!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not acces the database table! ");
+            e.printStackTrace(); 
         }
+        
+        catch (Exception e) {
+            AlertManagement.displayErrorAlert(
+                "while trying to acces the list of commodities!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not get the list of commodities! ");
+            e.printStackTrace(); 
+        }
+        
         return commoditiestList;
     }
 
@@ -278,8 +298,25 @@ public class CommodityDAO {
                 c.setCommodityPriceWithoutTax(rs.getInt("commodityPriceWithoutTax"));
                 preparedStatement.close();
             }
-        } catch (Exception e) {
-            // TODO: implement; OPersian's note
+        } catch (MySQLSyntaxErrorException e) { // NB: attention to import!
+           
+            AlertManagement.displayErrorAlert(
+                "while trying to acces an item from a database table!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not acces an item from a database table! ");
+            e.printStackTrace(); 
+        }
+        
+        catch (Exception e) {
+            AlertManagement.displayErrorAlert(
+                "while trying to acces an item from a database table!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not access an item from a database table!");
+            e.printStackTrace(); 
         }
         return c;
     }
