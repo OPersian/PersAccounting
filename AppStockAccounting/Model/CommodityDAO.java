@@ -152,6 +152,14 @@ public class CommodityDAO {
 
     public void deleteCommodity(int commoditytId) {
         try {
+            
+            AlertManagement.displayPreventionAlert(
+                "Attention!", 
+                "Commodity will be deleted!", 
+                "This is just to prevent you. "
+                    + "\nAs soon as you close this alert, "
+                    + "\nrequest will be proceeded");           
+            
             PreparedStatement preparedStatement = con.prepareStatement(SQL_DELETE);
             preparedStatement.setInt(1, commoditytId);
             
