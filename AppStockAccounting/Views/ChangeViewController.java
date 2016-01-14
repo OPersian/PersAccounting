@@ -17,7 +17,7 @@ import persaccounting.Auxiliaries.AlertManagement;
  *
  * @author Olena
  */
-public class EditViewController  {
+public class ChangeViewController  {
 
     @FXML private TextField commodityNameField;
     @FXML private TextField commodityDescriptionField;

@@ -106,6 +106,7 @@ and open the template in the editor.
         transparent;
     -fx-border-insets: 0 10 1 0;  
     -fx-font-size: 20pt;    
+    /* -fx-font-color: #187187; */
 }
 
 .split-pane:horizontal > .split-pane-divider {
