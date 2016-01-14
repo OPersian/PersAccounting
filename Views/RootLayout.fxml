@@ -69,7 +69,7 @@
       </menus>
     </MenuBar>
 
-    <VBox id="VBox" alignment="CENTER" layoutX="5.0" layoutY="588.0" prefHeight="39.0" prefWidth="567.0" spacing="5.0" AnchorPane.bottomAnchor="23.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
+          <VBox id="VBox" alignment="CENTER" layoutX="5.0" layoutY="588.0" prefHeight="45.0" prefWidth="696.0" spacing="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0">
       <children>
         <Separator minHeight="2.0" prefHeight="2.9998779296875" prefWidth="722.0" />
         <Label alignment="CENTER" contentDisplay="CENTER" prefWidth="738.0" text="Created by Olena Persianova" textAlignment="CENTER" textFill="#210066" underline="false">

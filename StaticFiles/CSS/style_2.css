@@ -23,6 +23,28 @@ and open the template in the editor.
     -fx-text-fill: #d8d8d8; /* #191970 */
 }
 
+.chart-title {
+  -fx-text-fill: #4682b4;
+  -fx-font-size: 1.6em;
+}
+
+.axis {
+    -fx-font-size: 1.4em;    
+    -fx-tick-label-fill: #914800;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+
+.axis-tick-mark {
+    -fx-stroke: #637040;
+    -fx-stroke-width: 3; 
+}
+
+.axis-minor-tick-mark {
+    -fx-stroke: #859656;
+}
+
 .default-color0.chart-series-area-line { -fx-stroke: #e9967a; }
 .default-color1.chart-series-area-line { -fx-stroke: #f0e68c; }
 .default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }

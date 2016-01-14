@@ -13,7 +13,7 @@ and open the template in the editor.
 
 .table-view {
     -fx-background-color: #104f5e; /* #1d1d1d */
-    -fx-font-color: #1d1d1d;  
+    /* -fx-font-color: #1d1d1d;  */
 }
 
 .table-cell {
@@ -33,7 +33,7 @@ and open the template in the editor.
 }
 
 .chart {
-    -fx-padding: 10px;
+    -fx-padding: 25px;
     -fx-background-color: #8bb8c3; /* #1d1d1d */
 }
 
@@ -46,12 +46,30 @@ and open the template in the editor.
   -fx-font-size: 1.6em;
 }
 
+.axis {
+    -fx-font-size: 1.4em;    
+    -fx-tick-label-fill: #b269a3; /* #914800 */
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}
+
 .axis-label {
   -fx-text-fill: #191970;
 }
 
+.axis-tick-mark {
+    -fx-stroke: #b269a3; /* #637040 */
+    -fx-stroke-width: 3; 
+}
+
+.axis-minor-tick-mark {
+    -fx-stroke: #cc9cc2; /* #859656 */
+}
+
+.default-color0.chart-series-line { -fx-stroke: #871871; -fx-stroke-width: 5px; }
+
 .default-color0.chart-series-area-line { -fx-stroke: #ab5d9b; } /* #e9967a */
-.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; } /* #f0e68c*/
-.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; } /* #dda0dd */
+
 
 

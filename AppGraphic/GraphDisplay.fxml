@@ -12,16 +12,15 @@
 <?import javafx.scene.chart.NumberAxis?>
 
 
-<LineChart fx:id="chart" alternativeRowFillVisible="false" 
-           animated="false" maxHeight="450.0" 
-           maxWidth="450.0" title="y=k/x" 
-           xmlns="http://javafx.com/javafx/8.0.40" 
-           xmlns:fx="http://javafx.com/fxml/1" 
-           fx:controller="persaccounting.AppGraphic.GraphDisplayController">
-  <xAxis>
-    <NumberAxis label="x" minorTickCount="10" side="BOTTOM" upperBound="360.0" />
-  </xAxis>
-  <yAxis>
-    <NumberAxis label="y" side="LEFT" />
-  </yAxis>
-</LineChart>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="persaccounting.AppGraphic.GraphDisplayController">
+   <center>
+      <LineChart fx:id="chart" alternativeRowFillVisible="false" animated="false" depthTest="ENABLE" legendVisible="false" maxHeight="556.0" maxWidth="558.0" prefHeight="375.0" prefWidth="558.0" title="y=k/x">
+        <xAxis>
+          <NumberAxis label="x" minorTickCount="10" side="BOTTOM" upperBound="360.0" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis label="y" side="LEFT" />
+        </yAxis>
+      </LineChart>
+   </center>
+</BorderPane>

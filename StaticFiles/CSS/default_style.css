@@ -241,7 +241,7 @@ and open the template in the editor.
 }
 
 .axis-label {
-  -fx-text-fill: #4682b4;
+    -fx-text-fill: #4682b4;
 }
 
 .axis-tick-mark {
