@@ -64,14 +64,37 @@ public class ChangeViewController  {
      */
     @FXML
     private void handleOk(ActionEvent event) {
-        if (isInputValid()) {
-            commodity.setCommodityName(commodityNameField.getText());
-            commodity.setCommodityDescription(commodityDescriptionField.getText());
-            commodity.setCommodityQuantityInStock(Integer.parseInt(commodityQuantityInStockField.getText()));
-            commodity.setCommodityPriceWithoutTax(Integer.parseInt(commodityPriceWithoutTaxField.getText()));
-            okClicked = true;
-            dialogStage.close();
-        }       
+        try {
+            if (isInputValid()) {
+                commodity.setCommodityName(commodityNameField.getText());
+                commodity.setCommodityDescription(commodityDescriptionField.getText());
+                commodity.setCommodityQuantityInStock(Double.parseDouble(commodityQuantityInStockField.getText()));
+                commodity.setCommodityPriceWithoutTax(Double.parseDouble(commodityPriceWithoutTaxField.getText()));
+                okClicked = true;
+                dialogStage.close(); }
+            
+        } catch (java.lang.NumberFormatException e) {
+            
+            AlertManagement.displayErrorAlert(
+                "trying to update the data on commodities! "
+                        + "\nEnsure you have correctly entered "
+                        + "all the data on a commodity!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not update data on commodities!");
+            e.printStackTrace(); 
+            
+        } catch (Exception error) {
+            
+            AlertManagement.displayErrorAlert(
+                "trying to update the data on commodities! ",
+                error.toString());
+            
+            // debug:
+            System.out.println("Could not update data on commodities!");
+            error.printStackTrace();  
+        }
     }
 
     /**
@@ -106,8 +129,8 @@ public class ChangeViewController  {
         } else {
             // Show the error message.
             AlertManagement.displayErrorAlert(
-                "Invalid fields", 
-                "Please correct invalid fields! Error itself: " + errorMessage);
+                "Invalid fields. Please correct invalid fields!", 
+                errorMessage);
             return false;
         }
     }    

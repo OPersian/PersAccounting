@@ -84,18 +84,16 @@ public class CommodityDAO {
             
             AlertManagement.displayErrorAlert(
                 "Could not establish database connection, SQLException is thrown!",
-                "Error itself: " + error.toString());
+                "\nError itself: \n" + error.toString());
 
             error.printStackTrace();
-            // TODO: add logic as required
             
         } catch(Exception error){
             
             AlertManagement.displayErrorAlert(
                 "Could not establish database connection!",
-                "Error itself: " + error.toString());
+                "\nError itself: \n" + error.toString());
             error.printStackTrace();
-            // TODO: add logic as required
         } 
     }
 
@@ -127,8 +125,28 @@ public class CommodityDAO {
             c.setId(generatedKeys.getInt(1));
         }
         preparedStatement.close();
-        } catch (Exception e) {
-            // TODO: implement; OPersian's note
+        
+        } catch (SQLException error) {
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to add commodity, in particular, "
+                        + "\nwhile SQL query executing. "
+                        + "\nSQLException is thrown!",
+                error.toString());
+
+            // debug:
+            System.out.println("Could not add commodity! ");
+            error.printStackTrace();
+            
+        } catch (Exception e) { // NumberFormatException - in handleOK()
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to add commodity!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not add commodity! ");
+            e.printStackTrace();   
         }
     }
 
@@ -143,8 +161,28 @@ public class CommodityDAO {
             System.out.println("SQL query has been successfully executed."); // debug
 
             preparedStatement.close();
-        } catch (Exception e) {
-            // TODO: implement; OPersian's note
+            
+        } catch (SQLException error) {
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to delete commodity, in particular, "
+                        + "\nwhile SQL query executing. "
+                        + "\nSQLException is thrown!",
+                error.toString());
+
+            // debug:
+            System.out.println("Could not delete commodity! ");
+            error.printStackTrace();
+            
+        } catch (Exception e) { // NumberFormatException - in handleOK()
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to delete commodity!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not delete commodity! ");
+            e.printStackTrace();   
         }
     }
 
@@ -163,8 +201,28 @@ public class CommodityDAO {
             System.out.println("SQL query has been successfully executed."); // debug
             
             preparedStatement.close();
-        } catch (Exception e) {
-            // TODO: implement; OPersian's note
+            
+        } catch (SQLException error) {
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to update commodity, in particular, "
+                        + "\nwhile SQL query executing. "
+                        + "\nSQLException is thrown!",
+                error.toString());
+
+            // debug:
+            System.out.println("Could not update commodity! ");
+            error.printStackTrace();
+            
+        } catch (Exception e) { // NumberFormatException - in handleOK()
+            
+            AlertManagement.displayErrorAlert(
+                "while trying to updat commodity!",
+                e.toString());
+            
+            // debug:
+            System.out.println("Could not update commodity! ");
+            e.printStackTrace();   
         }
     }
 
