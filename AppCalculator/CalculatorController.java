@@ -22,11 +22,13 @@ public class CalculatorController {
     
     // private static ObservableList<String> styleSheets;
     // private AnchorPane rootPane = new AnchorPane();
-
+    
+    /*
     private String style1URL = getClass().
             getResource(Configs.calculator_style_1).toExternalForm();
     private String style2URL = getClass().
             getResource(Configs.calculator_style_2).toExternalForm();
+    */
 
     // TODO: refactor
     private BigDecimal left; // left_str_number
@@ -43,6 +45,13 @@ public class CalculatorController {
 
     @FXML
     private void handleStyleButtonAction(ActionEvent e) {
+        
+        String style1URL = getClass().
+            getResource(Configs.calculator_style_1).toExternalForm();
+        
+        String style2URL = getClass().
+            getResource(Configs.calculator_style_2).toExternalForm();
+        
         Button clicked = (Button)e.getSource();
         // styleSheets = rootPane.getStylesheets();
         // System.out.println(styleSheets);

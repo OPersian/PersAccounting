@@ -10,3 +10,48 @@ and open the template in the editor.
 .background {
     -fx-background-color: #187187; /* #1d1d1d */
 }
+
+.table-view {
+    -fx-background-color: #104f5e; /* #1d1d1d */
+    -fx-font-color: #1d1d1d;  
+}
+
+.table-cell {
+    -fx-background-color: #8bb8c3; /* #1d1d1d */
+}
+
+.button {
+    -fx-padding: 5 22 5 22;   
+    -fx-border-color: #e2e2e2;
+    -fx-border-width: 2;
+    -fx-background-radius: 0;
+    -fx-background-color: #104f5e; /* #1d1d1d */
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-font-size: 11pt;
+    -fx-text-fill: #d8d8d8;
+    -fx-background-insets: 0 0 0 0, 0, 1, 2;
+}
+
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: #8bb8c3; /* #1d1d1d */
+}
+
+.chart-legend-item{
+    -fx-text-fill: #191970;
+}
+
+.chart-title {
+  -fx-text-fill: #191970;
+  -fx-font-size: 1.6em;
+}
+
+.axis-label {
+  -fx-text-fill: #191970;
+}
+
+.default-color0.chart-series-area-line { -fx-stroke: #ab5d9b; } /* #e9967a */
+.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; } /* #f0e68c*/
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; } /* #dda0dd */
+
+

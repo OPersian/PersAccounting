@@ -7,6 +7,24 @@ and open the template in the editor.
     Author     : Olena
 */
 
+
+/* like default styling */
+
 .background {
     -fx-background-color: #1d1d1d; /* #187187 */
 }
+
+.chart {
+    -fx-padding: 10px;
+    -fx-background-color: #1d1d1d;
+}
+
+.chart-legend-item{
+    -fx-text-fill: #d8d8d8; /* #191970 */
+}
+
+.default-color0.chart-series-area-line { -fx-stroke: #e9967a; }
+.default-color1.chart-series-area-line { -fx-stroke: #f0e68c; }
+.default-color2.chart-series-area-line { -fx-stroke: #dda0dd; }
+
+

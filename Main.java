@@ -35,6 +35,10 @@ public class Main extends Application {
         return stage;
     }
     
+    public Scene getPrimaryScene() {
+        return scene;
+    }    
+    
     // create scene with styling:
     private Scene createScene(Pane mainPane) {
         Scene scene = new Scene(
@@ -81,7 +85,7 @@ public class Main extends Application {
         try {
             mainPane = loadMainPane();            
             CheckBox chbDefineResizability = new CheckBox("Resizable");
-            chbDefineResizability.setLayoutX(470); // 10
+            chbDefineResizability.setLayoutX(600); // 10
             chbDefineResizability.setLayoutY(50); // 50         
             // chbDefineResizability.setAlignment(Pos.CENTER_RIGHT);
             mainPane.getChildren().addAll(chbDefineResizability);            

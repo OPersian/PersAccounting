@@ -6,12 +6,17 @@
 package persaccounting.Views;
 
 
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.Scene;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
+import persaccounting.Globals;
+import persaccounting.Main;
 import persaccounting.ViewNavigation;
 
 /**
@@ -20,7 +25,18 @@ import persaccounting.ViewNavigation;
  */
 public class RootLayoutController  {
     
+    // TODO: refactor
+    /*
+    private String style1URL = getClass().
+            getResource(Configs.calculator_style_1).toExternalForm();
+    private String style2URL = getClass().
+            getResource(Configs.calculator_style_2).toExternalForm();
+    */
+    private static ObservableList<String> styleSheets;
+    
     @FXML private StackPane viewHolder;
+    @FXML private MenuItem setDarkStyleMenu;
+    @FXML private MenuItem setLightStyleMenu;
    
     public void setView(Node node) {
         viewHolder.getChildren().setAll(node);
@@ -67,10 +83,26 @@ public class RootLayoutController  {
     }
 
     @FXML
-    private void setDarkStyle(ActionEvent event) {
-    }
-
-    @FXML
-    private void setBlueStyle(ActionEvent event) {
+    private void handleStyleMenuAction(ActionEvent event) {
+        String style1URL = getClass().
+            getResource(Configs.calculator_style_1).toExternalForm();
+        
+        String style2URL = getClass().
+            getResource(Configs.calculator_style_2).toExternalForm();        
+        
+        /*
+        Main mainApp = new Main();
+        Scene mainScene = mainApp.getPrimaryScene();
+        // styleSheets = mainScene.getStylesheets();
+        */
+        
+        MenuItem menu_clicked = (MenuItem)event.getSource();
+        if (menu_clicked == setLightStyleMenu) {
+            Globals.mainScene.remove(style2URL);
+            Globals.mainScene.add(style1URL);
+        } else if (menu_clicked == setDarkStyleMenu) {
+            Globals.mainScene.remove(style1URL);
+            Globals.mainScene.add(style2URL); // mainScene.getStylesheets().add(style2URL);
+        }        
     }
 }
