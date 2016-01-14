@@ -11,6 +11,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -109,6 +110,12 @@ public class Main extends Application {
             // bidirectional binding to change resizability option:
             chbDefineResizability.selectedProperty().
                     bindBidirectional(stage.resizableProperty());
+            /*
+            stage.getIcons().add(new Image(this.getClass().
+                getResource(
+                "/persaccounting/StaticFiles/Icons/persmain.png").
+                toString()));
+            */
                         
             stage.show();            
         } catch (IOException e) {

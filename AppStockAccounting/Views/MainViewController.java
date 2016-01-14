@@ -27,6 +27,7 @@ import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
 import persaccounting.Main;
 import persaccounting.ViewNavigation;
+import javafx.scene.image.Image; // NOT import java.awt.Image;
 
 /**
  * FXML Controller class
@@ -109,12 +110,17 @@ public class MainViewController implements Initializable {
      * clicks OK, the changes are saved into the provided commodity object and true
      * is returned.
      * 
+     * @param viewName
+     * @param windowTitle
      * @param commodity: the commodity object to be edited
      * @return true if the user clicked OK, false otherwise.
      */
     
     // TODO: refactor with regard to sub-view! OPersian's note; 
-    public boolean showCommodityChangeDialog(String viewName, String windowTitle, Commodity commodity) {
+    public boolean showCommodityChangeDialog(
+            String viewName, 
+            String windowTitle, 
+            Commodity commodity) {
         try {            
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
@@ -125,7 +131,14 @@ public class MainViewController implements Initializable {
             dialogStage.setTitle(windowTitle);
             dialogStage.setResizable(false);
             dialogStage.initModality(Modality.WINDOW_MODAL);
-            // dialogStage.initOwner(mainApp.getPrimaryStage()); // TODO: refactor: set icon in other way
+            
+            // dialogStage.initOwner(mainApp.getPrimaryStage()); 
+            // Add a custom icon.
+            dialogStage.getIcons().add(new Image(this.getClass().
+                getResource(
+                "/persaccounting/StaticFiles/Icons/Stages/commodity-icon.png").
+                toString()));
+            
             Scene scene = new Scene(page);
             dialogStage.setScene(scene);            
             
