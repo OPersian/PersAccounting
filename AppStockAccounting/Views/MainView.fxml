@@ -15,9 +15,18 @@
          <children>
             <ToolBar prefHeight="36.0" prefWidth="455.0" styleClass="background">
               <items>
-                  <Button layoutX="442.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleAdd" styleClass="addbtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
-                  <Button layoutX="496.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleEdit" styleClass="edibtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
-                  <Button layoutX="550.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleDelete" styleClass="deletebtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css" /> 
+                  <Button layoutX="442.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleAdd" styleClass="addbtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css">
+                     <tooltip>
+                        <Tooltip text="Add new item" />
+                     </tooltip></Button> 
+                  <Button layoutX="496.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleEdit" styleClass="edibtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css">
+                     <tooltip>
+                        <Tooltip text="Edit selected item" />
+                     </tooltip></Button> 
+                  <Button layoutX="550.0" layoutY="3.0" mnemonicParsing="false" onAction="#handleDelete" styleClass="deletebtn" stylesheets="@../../StaticFiles/CSS/acc_icons_style.css">
+                     <tooltip>
+                        <Tooltip text="Delete selected item" />
+                     </tooltip></Button> 
               </items>
             </ToolBar>
             <GridPane alignment="TOP_CENTER" prefWidth="612.0">
