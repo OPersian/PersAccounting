@@ -108,15 +108,15 @@ public class MainViewController implements Initializable {
      */
     
     // TODO: refactor with regard to sub-view! OPersian's note; 
-    public boolean showCommodityEditDialog(Commodity commodity) {
+    public boolean showCommodityEditDialog(String viewName, String windowTitle, Commodity commodity) {
         try {            
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(Main.class.getResource(Configs.ACC_EDIT_VIEW));
+            loader.setLocation(Main.class.getResource(viewName));
             AnchorPane page = (AnchorPane) loader.load();
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit Commodity");
+            dialogStage.setTitle(windowTitle);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             // dialogStage.initOwner(mainApp.getPrimaryStage()); // TODO: refactor: set icon in other way
             Scene scene = new Scene(page);
@@ -145,7 +145,7 @@ public class MainViewController implements Initializable {
     @FXML
     public void handleAdd() {  // not private!
         Commodity tempCommodity = new Commodity();
-        boolean okClicked = showCommodityEditDialog(tempCommodity);
+        boolean okClicked = showCommodityEditDialog(Configs.ACC_ADD_VIEW, "Add Item", tempCommodity);
         try {
             if (okClicked) {
                 model.add(tempCommodity);
@@ -188,7 +188,7 @@ public class MainViewController implements Initializable {
         int selectedIndex = sM.getSelectedIndex();
         Commodity selectedCommodity = sM.getSelectedItem();
         if (selectedCommodity != null) {
-            boolean okClicked = showCommodityEditDialog(selectedCommodity);
+            boolean okClicked = showCommodityEditDialog(Configs.ACC_EDIT_VIEW, "Edit Item", selectedCommodity);
             if (okClicked) {
                 model.edit(selectedIndex);
                 totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));

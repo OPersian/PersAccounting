@@ -63,8 +63,10 @@ public class Mapper {
         scene_style_mapper.put(Configs.MAIN_PAGE, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.AUTHOR_INFO, calc_style_scene_mapper);
         scene_style_mapper.put(Configs.VIEW_SETTINGS, calc_style_scene_mapper);
-        scene_style_mapper.put(Configs.ACC_EDIT_VIEW, calc_style_scene_mapper);
+        
         scene_style_mapper.put(Configs.ACC_MAIN, calc_style_scene_mapper);
+        scene_style_mapper.put(Configs.ACC_ADD_VIEW, calc_style_scene_mapper);
+        scene_style_mapper.put(Configs.ACC_EDIT_VIEW, calc_style_scene_mapper);
         
         // System.out.println(scene_style_mapper);       // debug
     }    

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.sql.*;
 import persaccounting.AppStockAccounting.Entity.Commodity;
+import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
 
 /**
@@ -59,10 +60,15 @@ public class CommodityDAO {
             Class.forName(Configs.JDBC_DRIVER);  // ClassNotFoundException
             /* java.sql.SQLException: No suitable driver found for jdbc:mysql://localhost:3306/persaccounting */
             System.out.println("JDBC_DRIVER has been found."); // debug 
+            
         } catch (ClassNotFoundException e) {
+            
+            AlertManagement.displayErrorAlert(
+                "JDBC driver could not be found!",
+                "Please confidure JDBC driver! Error itself: " + e.toString());
+            
             System.out.println("-------- JDBC_DRIVER could not be found! --------");
             e.printStackTrace();
-            // TODO: add logic as required
         }
         
         // Open a connection:
@@ -73,10 +79,21 @@ public class CommodityDAO {
                     Configs.USER,
                     Configs.PASS);
             System.out.println("Successfully connected to db."); // debug 
+            
         } catch (SQLException error) {
+            
+            AlertManagement.displayErrorAlert(
+                "Could not establish database connection, SQLException is thrown!",
+                "Error itself: " + error.toString());
+
             error.printStackTrace();
             // TODO: add logic as required
+            
         } catch(Exception error){
+            
+            AlertManagement.displayErrorAlert(
+                "Could not establish database connection!",
+                "Error itself: " + error.toString());
             error.printStackTrace();
             // TODO: add logic as required
         } 

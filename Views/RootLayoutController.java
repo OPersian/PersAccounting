@@ -10,14 +10,12 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import persaccounting.AppStockAccounting.Views.MainViewController;
 import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
 import persaccounting.Globals;
-import persaccounting.Main;
 import persaccounting.ViewNavigation;
 
 /**

@@ -20,6 +20,7 @@ public class Configs {
     public static final String CALCULATOR =     "/persaccounting/AppCalculator/CalculatorFXML.fxml"; 
     public static final String GRAPH_DISPLAY =  "/persaccounting/AppGraphic/GraphDisplay.fxml";
     public static final String ACC_EDIT_VIEW =  "/persaccounting/AppStockAccounting/Views/EditView.fxml";
+    public static final String ACC_ADD_VIEW =  "/persaccounting/AppStockAccounting/Views/AddView.fxml";
     public static final String ACC_MAIN =       "/persaccounting/AppStockAccounting/Views/MainView.fxml";    
     
     /*------------------------END navigation on scenes-----------------------*/    
