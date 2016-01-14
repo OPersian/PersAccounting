@@ -143,21 +143,27 @@ public class MainViewController implements Initializable {
      */
 
     @FXML
-    private void handleAdd() {
+    public void handleAdd() {  // not private!
         Commodity tempCommodity = new Commodity();
         boolean okClicked = showCommodityEditDialog(tempCommodity);
-        if (okClicked) {
-            model.add(tempCommodity);
-            totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
-            totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
-            totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
-            
-            ViewNavigation.loadView(Configs.ACC_MAIN); // instant table reload
+        try {
+            if (okClicked) {
+                model.add(tempCommodity);
+                totalSumWithoutTaxField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_without_tax(model.getCache())));
+                totalTaxSumField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_tax_sum(model.getCache())));
+                totalSumTaxInclField.setText(String.format(FORMAT_EL, SummaryCalculations.calculate_total_sum_tax_included(model.getCache())));
+
+                ViewNavigation.loadView(Configs.ACC_MAIN); // instant table reload
+            }
+        }
+        catch (Exception e) {
+            ViewNavigation.loadView(Configs.ACC_MAIN); // TODO: refactor; 'kostul''        
+            e.printStackTrace();
         }
     }
 
     @FXML
-    private void handleDelete() {
+    public void handleDelete() {  // not private!
         int selectedIndex = sM.getSelectedIndex();
         if (selectedIndex >= 0) {
             // commoditiesTable.getItems().remove(selectedIndex);
@@ -178,7 +184,7 @@ public class MainViewController implements Initializable {
     }
 
     @FXML
-    private void handleEdit() {
+    public void handleEdit() {  // not private!
         int selectedIndex = sM.getSelectedIndex();
         Commodity selectedCommodity = sM.getSelectedItem();
         if (selectedCommodity != null) {

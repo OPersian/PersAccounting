@@ -55,9 +55,9 @@
                         <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="ANY" shortcut="UP" />
                      </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-                  <MenuItem mnemonicParsing="false" text="Add..." />
-                  <MenuItem mnemonicParsing="false" text="Edit..." />
-                  <MenuItem mnemonicParsing="false" text="Delete..." />
+                  <MenuItem mnemonicParsing="false" onAction="#addItemMenu" text="Add..." />
+                  <MenuItem mnemonicParsing="false" onAction="#editItemMenu" text="Edit..." />
+                  <MenuItem mnemonicParsing="false" onAction="#deleteItemMenu" text="Delete..." />
                </items>
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Calculator">

@@ -13,6 +13,7 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
+import persaccounting.AppStockAccounting.Views.MainViewController;
 import persaccounting.Auxiliaries.AlertManagement;
 import persaccounting.Configs;
 import persaccounting.Globals;
@@ -104,5 +105,23 @@ public class RootLayoutController  {
             Globals.mainScene.remove(style1URL);
             Globals.mainScene.add(style2URL); // mainScene.getStylesheets().add(style2URL);
         }        
+    }
+
+    @FXML
+    private void addItemMenu(ActionEvent event) {
+        MainViewController accMainView = new MainViewController();
+        accMainView.handleAdd();
+    }
+
+    @FXML
+    private void editItemMenu(ActionEvent event) {
+        MainViewController accMainView = new MainViewController();
+        accMainView.handleEdit();
+    }
+
+    @FXML
+    private void deleteItemMenu(ActionEvent event) {
+        MainViewController accMainView = new MainViewController();
+        accMainView.handleDelete();
     }
 }
