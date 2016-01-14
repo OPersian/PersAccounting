@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.input.*?>
 <?import javafx.embed.swing.*?>
 <?import javafx.scene.canvas.*?>
 <?import java.lang.*?>
@@ -25,9 +26,15 @@
       <menus>
         <Menu disable="false" mnemonicParsing="false" text="File">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#showMainPage" text="Main Page" />
+            <MenuItem mnemonicParsing="false" onAction="#showMainPage" text="Main Page">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="M" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
                   <SeparatorMenuItem mnemonicParsing="false" />
-            <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit" />
+            <MenuItem mnemonicParsing="false" onAction="#exit" text="Exit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="ESCAPE" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
           </items>
         </Menu>
             <Menu mnemonicParsing="false" text="View">
@@ -43,18 +50,30 @@
             </Menu>
             <Menu mnemonicParsing="false" text="Accounting">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchAccountingApp" text="ListView" />
-                  <MenuItem mnemonicParsing="false" text="ItemView" />
+                  <MenuItem mnemonicParsing="false" onAction="#launchAccountingApp" text="ListView">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="A" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Add..." />
+                  <MenuItem mnemonicParsing="false" text="Edit..." />
+                  <MenuItem mnemonicParsing="false" text="Delete..." />
                </items>
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Calculator">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchCalculator" text="Launch Calculator" />
+                  <MenuItem mnemonicParsing="false" onAction="#launchCalculator" text="Launch Calculator">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
                </items>
             </Menu>
             <Menu disable="false" mnemonicParsing="false" text="Graphic">
                <items>
-                  <MenuItem mnemonicParsing="false" onAction="#launchGraph" text="Launch Graphic" />
+                  <MenuItem mnemonicParsing="false" onAction="#launchGraph" text="Launch Graphic">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="G" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
                </items>
             </Menu>
        
@@ -62,7 +81,10 @@
         
         <Menu mnemonicParsing="false" text="Help">
           <items>
-            <MenuItem mnemonicParsing="false" onAction="#showAbout" text="Info..." />
+            <MenuItem mnemonicParsing="false" onAction="#showAbout" text="Info...">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="H" control="UP" meta="UP" shift="ANY" shortcut="UP" />
+                     </accelerator></MenuItem>
             <MenuItem mnemonicParsing="false" onAction="#showAuthor" text="Author" />
           </items>
         </Menu>
