@@ -43,7 +43,11 @@ public class MainViewController implements Initializable {
     @FXML private TextField totalSumWithoutTaxField;
     @FXML private TextField totalTaxSumField;
     @FXML private TextField totalSumTaxInclField;
-
+    
+    @FXML private TableColumn<Commodity, Double> commodityTotalWithoutTaxColumn;
+    @FXML private TableColumn<Commodity, Double> commodityTotalTaxColumn;
+    @FXML private TableColumn<Commodity, Double> commodityTotalWithTaxColumn;
+    
     private static Main mainApp;
     private static DataModel model;
     private static TableViewSelectionModel<Commodity> sM;
@@ -64,17 +68,19 @@ public class MainViewController implements Initializable {
         commodityDescriptionColumn.setCellValueFactory(new PropertyValueFactory<>("commodityDescription"));
         commodityQuantityInStockColumn.setCellValueFactory(new PropertyValueFactory<>("commodityQuantityInStock"));
         commodityPriceWithoutTaxColumn.setCellValueFactory(new PropertyValueFactory<>("commodityPriceWithoutTax"));         
+
+        commodityTotalWithoutTaxColumn.setCellValueFactory(cellData -> cellData.getValue().calculate_unit_sum_without_tax().asObject()); 
+        commodityTotalTaxColumn.setCellValueFactory(cellData -> cellData.getValue().calculate_unit_tax_sum().asObject()); 
+        commodityTotalWithTaxColumn.setCellValueFactory(cellData -> cellData.getValue().calculate_unit_sum_tax_included().asObject()); 
         
+        /*      
         // Initialize and populate commodities table of four (?) columns:
-        /*
         commodityNameColumn.setCellValueFactory(cellData -> cellData.getValue().commodityNameProperty());
         commodityDescriptionColumn.setCellValueFactory(cellData -> cellData.getValue().commodityNameDescription());
         */
+        
         // commodityQuantityInStockColumn.setCellValueFactory(cellData -> cellData.getValue().commodityQuantityInStockProperty());
         // commodityPriceWithoutTaxColumn.setCellValueFactory(cellData -> cellData.getValue().commodityPriceWithoutTaxProperty()); 
-        
-        // TODO: implement (not required):
-        // averageColumn.setCellValueFactory(cellData -> cellData.getValue().calculateTotalValue().asObject());
         
         sM = commoditiesTable.getSelectionModel(); // TODO: consider: usage cases   
         

@@ -73,7 +73,7 @@ and open the template in the editor.
 }
 
 .table-view .column-header, .table-view .filler {
-    -fx-size: 35;
+    -fx-size: 20;
     -fx-border-width: 0 0 1 0;
     -fx-background-color: transparent;
     -fx-border-color: 
@@ -85,11 +85,13 @@ and open the template in the editor.
 }
 
 .table-view .column-header .label {
-    -fx-font-size: 20pt;
+    -fx-font-size: 15pt; /* 20pt */
+    /* -fx-line-spacing: 1em; */
+    -fx-text-wrap: true;    
     -fx-font-family: "Segoe UI Light";
     -fx-text-fill: white;
     -fx-alignment: center-left;
-    -fx-opacity: 1;
+    -fx-opacity: 1;    
 }
 
 .table-view:focused .table-row-cell:filled:focused:selected {
@@ -160,6 +162,10 @@ and open the template in the editor.
 
 .addItemMenu > .label {
     -fx-graphic: url("../Icons/MenuIcons/add-icon.png");
+}
+
+.iconMenuStyle > .label {
+    -fx-graphic: url("../Icons/MenuIcons/style_1.png");
 }
 
 .editItemMenu > .label {

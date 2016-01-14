@@ -28,6 +28,16 @@ and open the template in the editor.
   -fx-font-size: 1.6em;
 }
 
+.table-view .column-header .label {
+    -fx-font-size: 15pt; /* 20pt */
+    /* -fx-line-spacing: 1em; */
+    -fx-text-wrap: true;    
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;    
+}
+
 .axis {
     -fx-font-size: 1.4em;    
     -fx-tick-label-fill: #914800;

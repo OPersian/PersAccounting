@@ -32,6 +32,16 @@ and open the template in the editor.
     -fx-background-insets: 0 0 0 0, 0, 1, 2;
 }
 
+.table-view .column-header .label {
+    -fx-font-size: 15pt; /* 20pt */
+    /* -fx-line-spacing: 1em; */
+    -fx-text-wrap: true;    
+    -fx-font-family: "Segoe UI Light";
+    -fx-text-fill: white;
+    -fx-alignment: center-left;
+    -fx-opacity: 1;    
+}
+
 .chart {
     -fx-padding: 25px;
     -fx-background-color: #8bb8c3; /* #1d1d1d */

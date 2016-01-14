@@ -40,7 +40,7 @@
             <Menu mnemonicParsing="false" text="View">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#showViewSettings" text="View Settings" />
-                  <Menu mnemonicParsing="false" text="Style">
+                  <Menu mnemonicParsing="false" styleClass="iconMenuStyle" text="Style">
                     <items>
                       <MenuItem fx:id="setLightStyleMenu" mnemonicParsing="false" onAction="#handleStyleMenuAction" text="Light" />
                         <MenuItem fx:id="setDarkStyleMenu" mnemonicParsing="false" onAction="#handleStyleMenuAction" text="Dark" />
