@@ -107,19 +107,34 @@ public class RootLayoutController  {
 
     @FXML
     private void addItemMenu(ActionEvent event) {
-        MainViewController accMainView = new MainViewController();
-        accMainView.handleAdd();
+        try {
+            MainViewController accMainView = new MainViewController();
+            accMainView.handleAdd();
+        } catch (Exception e) { // "redirect"!
+            ViewNavigation.loadView(Configs.ACC_MAIN);
+            e.printStackTrace();            
+        }            
     }
 
     @FXML
     private void editItemMenu(ActionEvent event) {
-        MainViewController accMainView = new MainViewController();
-        accMainView.handleEdit();
+        try {
+            MainViewController accMainView = new MainViewController();
+            accMainView.handleEdit();
+        } catch (Exception e) { // "redirect"!
+            ViewNavigation.loadView(Configs.ACC_MAIN);
+            e.printStackTrace();            
+        }
     }
 
     @FXML
     private void deleteItemMenu(ActionEvent event) {
-        MainViewController accMainView = new MainViewController();
-        accMainView.handleDelete();
+        try {        
+            MainViewController accMainView = new MainViewController();
+            accMainView.handleDelete();
+        } catch (Exception e) { // "redirect"!
+            ViewNavigation.loadView(Configs.ACC_MAIN);
+            e.printStackTrace();            
+        }            
     }
 }
